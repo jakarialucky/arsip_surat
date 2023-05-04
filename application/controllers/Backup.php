@@ -33,6 +33,6 @@ class Backup extends CI_Controller
         write_file($save, $backup);
 
         // Download file backup database
-        // force_download($filename, $backup);
+        force_download($filename, $backup);
     }
 }

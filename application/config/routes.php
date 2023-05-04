@@ -73,11 +73,12 @@ $route['logout'] = 'login/logout';
 $route[LOGIN_ROUTE] = 'login';
 $route[LOGIN_ROUTE . '/(:any)'] = 'login/$1';
 
-
+$route[ADMIN_ROUTE . '/backup'] = 'Backup';
 $route[ADMIN_ROUTE . '/(:any)'] = '$1/backend/$1';
 $route[ADMIN_ROUTE . '/(:any)/(:any)'] = '$1/backend/$1/$2';
 $route[ADMIN_ROUTE . '/(:any)/(:any)/(:any)'] = '$1/backend/$1/$2/$3';
 $route[ADMIN_ROUTE . '/(:any)/(:any)/(:any)/(:any)'] = '$1/backend/$1/$2/$3/$4';
+
 
 $route[FRONT_ROUTE . '/(:any)'] = '$1/frontend/$1';
 $route[FRONT_ROUTE . '/(:any)/(:any)'] = '$1/frontend/$1/$2';
