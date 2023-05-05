@@ -42,7 +42,7 @@
                 </div>
                 <div class="mt-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" name="submit" id="submit">LOGIN</button>
-                  <a href="<?= base_url('publish/pages') ?>" class="btn btn-block btn-warning btn-lg font-weight-medium auth-form-btn">INFORMASI UMUM LABORATORIUM</a>
+
                 </div>
 
               </form>

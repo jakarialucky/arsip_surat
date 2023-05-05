@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /* dev : mpampam*/
 /* fb : https://facebook.com/mpampam*/
@@ -9,7 +9,8 @@
 /* Please DO NOT modify this information */
 
 
-class Filemanager extends Backend{
+class Filemanager extends Backend
+{
 
   private $title = "File manager";
 
@@ -17,15 +18,15 @@ class Filemanager extends Backend{
   {
     $config = array(
       'title' => $this->title,
-		 );
-		parent::__construct($config);
-    $this->load->model("Filemanager_model","model");
+    );
+    parent::__construct($config);
+    $this->load->model("Filemanager_model", "model");
   }
 
   function _rules()
   {
-		$this->form_validation->set_rules('file_name', 'File Name', 'trim|xss_clean|htmlspecialchars|required');
-		$this->form_validation->set_error_delimiters('<i class="text-danger" style="font-size:11px">', '</i>');
+    $this->form_validation->set_rules('file_name', 'File Name', 'trim|xss_clean|htmlspecialchars|required');
+    $this->form_validation->set_error_delimiters('<i class="text-danger" style="font-size:11px">', '</i>');
   }
 
   function index()
@@ -38,46 +39,46 @@ class Filemanager extends Backend{
   function json()
   {
     if ($this->input->is_ajax_request()) {
-    if (!$this->is_allowed('filemanager_list',false)) {
-      return $this->response([
-      'is_allowed' => 'sorry you do not have permission to access'
-      ]);
-    }
+      if (!$this->is_allowed('filemanager_list', false)) {
+        return $this->response([
+          'is_allowed' => 'sorry you do not have permission to access'
+        ]);
+      }
       $rows = $this->model->get_datatables();
       $data = array();
       foreach ($rows as $get) {
-          $row = array();
-          $row[] = '<div class="form-check">
+        $row = array();
+        $row[] = '<div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" name="id" value="'.enc_url($get->id).'" class="form-check-input">
+                        <input type="checkbox" name="id" value="' . enc_url($get->id) . '" class="form-check-input">
                       <i class="input-helper"></i></label>
                     </div>';
-          $row[] = imgView($get->file_name);
-					$row[] = "<span class='text-primary'>$get->file_name</span>";
-          $row[] = $get->ket;
-          $row[] = date('d/m/Y H:i', strtotime($get->created));
-          $row[] = '
+        $row[] = imgView($get->file_name);
+        $row[] = "<span class='text-primary'>$get->file_name</span>";
+        $row[] = $get->ket;
+        $row[] = date('d/m/Y H:i', strtotime($get->created));
+        $row[] = '
                       <div class="btn-group" role="group" aria-label="Basic example">
-                          <button type="button" data-text="'.base_url("_temp/uploads/img/$get->file_name").'" class="btn btn-warning" id="copyboard"  title="copy path img">
+                          <button type="button" data-text="' . base_url("_temp/uploads/img/$get->file_name") . '" class="btn btn-warning" id="copyboard"  title="copy path img">
                             <i class="ti-files"></i>
                           </button>
                         </div>
 
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" data-text="'.$get->file_name.'" class="btn btn-warning" id="copyboard"  title="copy name img">
+                            <button type="button" data-text="' . $get->file_name . '" class="btn btn-warning" id="copyboard"  title="copy name img">
                               <i class="mdi mdi-checkbox-multiple-blank-outline"></i>
                             </button>
                           </div>
                    ';
-          $data[] = $row;
+        $data[] = $row;
       }
 
       $output = array(
-                      "draw" => $_POST['draw'],
-                      "recordsTotal" => $this->model->count_all(),
-                      "recordsFiltered" => $this->model->count_filtered(),
-                      "data" => $data,
-              );
+        "draw" => $_POST['draw'],
+        "recordsTotal" => $this->model->count_all(),
+        "recordsFiltered" => $this->model->count_filtered(),
+        "data" => $data,
+      );
       //output to json format
       return $this->response($output);
     }
@@ -86,7 +87,7 @@ class Filemanager extends Backend{
 
   function filter()
   {
-    $this->template->view("filter",[],false);
+    $this->template->view("filter", [], false);
   }
 
 
@@ -94,36 +95,37 @@ class Filemanager extends Backend{
   function add()
   {
     $this->is_allowed('filemanager_add');
-    $this->template->set_title(cclang("add")." $this->title");
-    $data = array('action' => url("filemanager/add_action"),
-                  'params' => "add",
-									'file_name' => set_value('file_name')
-                  );
-    $this->template->view("form",$data);
+    $this->template->set_title(cclang("add") . " $this->title");
+    $data = array(
+      'action' => url("filemanager/add_action"),
+      'params' => "add",
+      'file_name' => set_value('file_name')
+    );
+    $this->template->view("form", $data);
   }
 
 
   function add_action()
   {
-    if($this->input->is_ajax_request()){
+    if ($this->input->is_ajax_request()) {
       if (!is_allowed('filemanager_add')) {
-        show_error("Access Permission", 403,'403::Access Not Permission');
+        show_error("Access Permission", 403, '403::Access Not Permission');
         exit();
       }
 
       $json = array('success' => false, "alert" => array());
       $this->_rules();
       if ($this->form_validation->run()) {
-				$save_data['file_name'] = $this->imageCopy($this->input->post('file_name',true),$_POST['file-dir']);
-        $save_data['ket'] = $this->input->post('ket',true);
-				$save_data['created'] = date('Y-m-d H:i:s');
+        $save_data['file_name'] = $this->imageCopy($this->input->post('file_name', true), $_POST['file-dir']);
+        $save_data['ket'] = $this->input->post('ket', true);
+        $save_data['created'] = date('Y-m-d H:i:s');
 
         $this->model->insert($save_data);
-        set_message("success",cclang("notif_save"));
+        set_message("success", cclang("notif_save"));
 
         $json['redirect'] = url("filemanager");
         $json['success'] = true;
-      }else {
+      } else {
         foreach ($_POST as $key => $value) {
           $json['alert'][$key] = form_error($key);
         }
@@ -137,35 +139,32 @@ class Filemanager extends Backend{
   function delete()
   {
     if ($this->input->is_ajax_request()) {
-        $json = array('type' =>"error" , "msg" => "error delete");
-        if (!is_allowed('filemanager_delete')) {
-          return $this->response([
-            'type_msg' => "error",
-            'msg' => "Do not have permission to access"
-  				]);
+      $json = array('type' => "error", "msg" => "error delete");
+      if (!is_allowed('filemanager_delete')) {
+        return $this->response([
+          'type_msg' => "error",
+          'msg' => "Do not have permission to access"
+        ]);
+      }
+
+
+      if ($this->input->post('id')) {
+        $id = $this->input->post('id');
+        $exp = explode(",", $id);
+        for ($i = 0; $i < count($exp); $i++) {
+          $getimg = $this->model->find(dec_url($exp[$i]));
+          $this->imageRemove($getimg->file_name, false);
+          $this->model->remove(dec_url($exp[$i]));
         }
 
+        $json['type_msg'] = "success";
+        $json['msg'] = cclang("notif_delete");
+      } else {
+        $json['type_msg'] = "error";
+        $json['msg'] = cclang("notif_delete_failed");
+      }
 
-        if ($this->input->post('id')) {
-          $id = $this->input->post('id');
-          $exp = explode(",", $id);
-          for ($i=0; $i <count($exp) ; $i++) {
-            $getimg = $this->model->find(dec_url($exp[$i]));
-            $this->imageRemove($getimg->file_name, false);
-            $this->model->remove(dec_url($exp[$i]));
-          }
-
-          $json['type_msg'] = "success";
-          $json['msg'] = cclang("notif_delete");
-
-        }else {
-          $json['type_msg'] = "error";
-          $json['msg'] = cclang("notif_delete_failed");
-        }
-
-        return $this->response($json);
+      return $this->response($json);
     }
   }
-
-
 }

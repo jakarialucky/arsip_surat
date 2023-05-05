@@ -23,14 +23,26 @@ function setting($kd = null, $field = "value")
 
 function imgView($img = "", $class = "img-thumbnail", $style = "")
 {
+
+  // return $ext;
+  // die();
   $str = '';
   if ($img != "") {
+    $ext = pathinfo($img, PATHINFO_EXTENSION);
     // $str .= '<a href="' . base_url() . '_temp/uploads/img/' . $img . '" data-fancybox="gallery">
     //           <img src="' . base_url() . '_temp/uploads/img/' . $img . '" alt="' . $img . '" style="' . $style . '" class="' . $class . '" />
     //         </a>';
-    $str .= '<a href="' . base_url() . '_temp/uploads/img/' . $img . '" data-fancybox="gallery" class="symbol symbol-50 flex-shrink-0">
+    if ($ext === 'jpg' || $ext === 'jpeg' || $ext === 'ico' || $ext === 'png' || $ext === 'gif') {
+      // ekstensi file diizinkan, lakukan tindakan yang diinginkan
+      $str .= '<a href="' . base_url() . '_temp/uploads/img/' . $img . '" data-fancybox="gallery" class="symbol symbol-50 flex-shrink-0">
                 <img src="' . base_url() . '_temp/uploads/img/' . $img . '" alt="photo">
             </a>';
+    } else {
+      // ekstensi file tidak diizinkan, lakukan tindakan yang sesuai
+      $str .= '<a href="' . base_url() . '_temp/uploads/img/' . $img . '" alt="' . $img . '" >
+      <i class="fas fa-download"></i>
+      </a>';
+    }
   } else {
     $str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" class="symbol symbol-50 flex-shrink-0">
               <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="' . $class . '" />

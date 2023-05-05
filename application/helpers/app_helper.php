@@ -138,16 +138,37 @@ function changeText($str)
 if (!function_exists('is_image')) {
 	function is_image($params = false, $class = "", $style = "")
 	{
+
+		// echo $ext;
+		// return $ext;
+		// die();
 		$str = '';
 		if ($params) {
+			$ext = pathinfo($params, PATHINFO_EXTENSION);
 			if (file_exists(FCPATH . "_temp/uploads/img/$params")) {
-				$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" data-fancybox="gallery" title="' . $params . '">
+				if ($ext === 'jpg' || $ext === 'jpeg' || $ext === 'ico' || $ext === 'png' || $ext === 'gif') {
+					// ekstensi file diizinkan, lakukan tindakan yang diinginkan
+					$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" data-fancybox="gallery" title="' . $params . '">
 		              <img src="' . base_url() . '_temp/uploads/img/' . $params . '" alt="' . $params . '" style="' . $style . '" class="' . $class . '" />
 		            </a>';
+				} else {
+					// ekstensi file tidak diizinkan, lakukan tindakan yang sesuai
+					$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" alt="' . $params . '" style="' . $style . '" class="' . $class . '">
+					<i class="fas fa-download"></i> Download File
+				  </a>';
+				}
 			} else {
-				$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available">
+				if ($ext === 'jpg' || $ext === 'jpeg' || $ext === 'ico' || $ext === 'png' || $ext === 'gif') {
+					// ekstensi file diizinkan, lakukan tindakan yang diinginkan
+					$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available">
 		              <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="' . $class . '" />
 		            </a>';
+				} else {
+					// ekstensi file tidak diizinkan, lakukan tindakan yang sesuai
+					$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" alt="' . $params . '" style="' . $style . '" class="' . $class . '">
+					<i class="fas fa-download"></i> Download File
+				  </a>';
+				}
 			}
 		} else {
 			$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available">

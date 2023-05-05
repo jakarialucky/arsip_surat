@@ -86,7 +86,7 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 // $default_controller = "login/backend/login";
-$default_controller = "pages/frontend/pages/dash";
+$default_controller = "dashboard_surat";
 // https://labkom.politala.ac.id/publish/pages/dash
 $admin_route = "cpanel";
 $login_route = "login";

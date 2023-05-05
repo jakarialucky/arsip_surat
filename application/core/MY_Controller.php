@@ -353,7 +353,7 @@ class Backend extends CI_Controller
 
           $config = [
             'upload_path'     => './_temp/uploads/tmp/' . $dir . '/',
-            'allowed_types'   => 'png|jpeg|jpg|gif|ico',
+            'allowed_types'   => 'png|jpeg|jpg|gif|ico|pdf|zip',
             'max_size'        => $max_upload,
             'max_filename'    => '20'
           ];
