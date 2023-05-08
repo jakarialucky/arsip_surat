@@ -14,7 +14,7 @@
           <div class="row justify-content-center">
             <div class="col-md-6">
               <h4 class="mb-4">Form Report Laporan</h4>
-              <form>
+              <form action="<?= url("c_laporan/pilih_laporan") ?>" method="POST">
                 <div class="form-group">
                   <label for="tgl_awal">Tanggal Awal</label>
                   <input type="date" class="form-control" id="tgl_awal" name="tgl_awal">
@@ -44,3 +44,11 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var table;
+    table = $('#table').DataTable({});
+
+
+  });
+</script>

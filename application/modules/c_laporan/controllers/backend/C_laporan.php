@@ -28,12 +28,14 @@ class C_laporan extends Backend
 
   function index()
   {
+    $this->template->set_title($this->title);
     $this->is_allowed('c_rba_list');
     $this->template->set_title($this->title);
     $this->template->view("index");
   }
   public function pilih_laporan()
   {
+    $this->template->set_title(cclang("cetak") . " " . $this->title);
     $tanggal_awal = $this->input->post('tgl_awal', true);
     $tanggal_akhir = $this->input->post('tgl_akhir', true);
     $jenis_laporan = $this->input->post('jenis_laporan', true);
@@ -49,6 +51,9 @@ class C_laporan extends Backend
   }
   function laporan_surat_masuk($tanggal_awal, $tanggal_akhir)
   {
+    $data['surat_masuk'] = $this->model->get_all_surat_masuk();
+    $this->template->view("surat_masuk", $data);
+    // $this->load->view('surat_masuk', $data);
   }
   function laporan_surat_keluar($tanggal_awal, $tanggal_akhir)
   {
