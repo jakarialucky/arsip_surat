@@ -29,7 +29,8 @@
   <link href="<?= base_url() ?>_temp/backend/template_metro/assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
   <link href="<?= base_url() ?>_temp/backend/template_metro/assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
   <!--end::Layout Themes-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.0.46/css/materialdesignicons.min.css" integrity="sha512-HmBTsbqKSDy0wIk8SGSCj68xUg8b22mGtXx8cXF64qcmnQnJepz6Aq37X43gF/WhbvqPcx68GoiaWu8wE8/y4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="<?= base_url() ?>_temp/backend/template_metro/assets/css/cdnjs/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.0.46/css/materialdesignicons.min.css" integrity="sha512-HmBTsbqKSDy0wIk8SGSCj68xUg8b22mGtXx8cXF64qcmnQnJepz6Aq37X43gF/WhbvqPcx68GoiaWu8wE8/y4g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link href="<?= base_url() ?>_temp/backend/vendors/ti-icons/css/themify-icons.css" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="<?= base_url() ?>_temp/backend/template_metro/assets/media/logos/favicon.ico" />
   <!-- plugins:js -->
@@ -42,7 +43,7 @@
   <!--begin::Page Vendors(used by this page)-->
   <script src="<?= base_url() ?>_temp/backend/template_metro/assets/plugins/custom/datatables/datatables.bundle.js"></script>
   <script src="<?= base_url() ?>_temp/backend/template_metro/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-  <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script>
+  <!-- <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM"></script> -->
   <script src="<?= base_url() ?>_temp/backend/template_metro/assets/plugins/custom/gmaps/gmaps.js"></script>
   <!--end::Page Vendors-->
   <!--begin::Page Scripts(used by this page)-->
