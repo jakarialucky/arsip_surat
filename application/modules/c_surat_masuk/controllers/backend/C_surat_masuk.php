@@ -55,9 +55,9 @@ class C_surat_masuk extends Backend
         $rows[] = $row->name;
         $rows[] = $row->sifat_surat;
         if ($row->status_disposisi == 'Belum Disposisi') {
-          $disposisi = '<a type="button" class="btn btn-warning btn-icon btn-sm" data-toggle="modal" data-target="#Dis19" title="Disposisikan"><i class="fa fa-comment"></i></a> &nbsp; Belum Disposisi';
+          $disposisi = '<a type="button" class="btn btn-warning btn-icon btn-sm" data-toggle="modal" data-id="' . $row->id_surat_masuk . '" title="Disposisikan" id="disposisi"><i class="fa fa-comment"></i></a> &nbsp; Belum Disposisi';
         } else {
-          $disposisi = '<a type="button" class="btn btn-default btn-icon btn-sm" href="javascript:;" title="Disposisi done"><i class="fa fa-comment"></i></a>';
+          $disposisi = '<a type="button" class="btn btn-default btn-icon btn-sm" href="javascript:;" title="Disposisi done"><i class="fa fa-comment"></i></a>Sudah Disposisi';
         }
         $rows[] =  $disposisi;
         $rows[] = is_image($row->berkas_surat_masuk);
@@ -120,7 +120,37 @@ class C_surat_masuk extends Backend
       $this->error404();
     }
   }
+  function add_disposisi()
+  {
+    if ($this->input->is_ajax_request()) {
 
+
+      $json = array('success' => false);
+
+
+      // if ($this->form_validation->run()) {
+      $save_data['id_surat'] = $this->input->post('id_surat_dispos', true);
+      $save_data['tanggal_disposisi'] = date("Y-m-d");
+      $save_data['id_petugas'] =  $this->session->userdata('id_user');
+      $save_data['tujuan_disposisi'] = $this->input->post('kepada', true);
+      $save_data['isi_disposisi'] = $this->input->post('isi', true);
+      $this->db->insert('tb_disposisi', $save_data);
+      $update_data['status_disposisi'] = 'Sudah Disposisi';
+      $update = $this->model->change($save_data['id_surat'], $update_data);
+      // $this->model->insert($save_data);
+
+      set_message("success", cclang("notif_save"));
+      $json['redirect'] = url("c_surat_masuk");
+      $json['success'] = true;
+      // } else {
+      //   foreach ($_POST as $key => $value) {
+      //     $json['alert'][$key] = form_error($key);
+      //   }
+      // }
+
+      $this->response($json);
+    }
+  }
   function add()
   {
     $this->is_allowed('c_surat_masuk_add');

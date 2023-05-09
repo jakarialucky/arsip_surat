@@ -29,7 +29,7 @@ class C_laporan extends Backend
   function index()
   {
     $this->template->set_title($this->title);
-    $this->is_allowed('c_rba_list');
+    // $this->is_allowed('c_rba_list');
     $this->template->set_title($this->title);
     $this->template->view("index");
   }
@@ -51,19 +51,29 @@ class C_laporan extends Backend
   }
   function laporan_surat_masuk($tanggal_awal, $tanggal_akhir)
   {
-    $data['surat_masuk'] = $this->model->get_all_surat_masuk();
+    $data['surat_masuk'] = $this->model->get_all_surat_masuk($tanggal_awal, $tanggal_akhir);
     $this->template->view("surat_masuk", $data);
     // $this->load->view('surat_masuk', $data);
   }
   function laporan_surat_keluar($tanggal_awal, $tanggal_akhir)
   {
+    $data['surat_keluar'] = $this->model->get_all_surat_keluar($tanggal_awal, $tanggal_akhir);
+    $this->template->view("surat_keluar", $data);
+    // $this->load->view('surat_masuk', $data);
   }
   function laporan_rba($tanggal_awal, $tanggal_akhir)
   {
+    $data['rba'] = $this->model->get_all_rba($tanggal_awal, $tanggal_akhir);
+    $this->template->view("rba", $data);
+    // $this->load->view('surat_masuk', $data);
   }
   function laporan_spj($tanggal_awal, $tanggal_akhir)
   {
+    $data['spj'] = $this->model->get_all_spj($tanggal_awal, $tanggal_akhir);
+    $this->template->view("spj", $data);
+    // $this->load->view('surat_masuk', $data);
   }
+
 
   function json()
   {

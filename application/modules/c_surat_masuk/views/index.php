@@ -87,7 +87,7 @@
         <table class="table table-bordered table-striped dt-responsive nowrap" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th data-priority="1">>No surat</th>
+              <th data-priority="1">No surat</th>
               <th>Tanggal Surat</th>
               <th>Perihal</th>
               <th>Jenis Surat</th>
@@ -96,7 +96,7 @@
               <th>Deskripsi</th>
               <th>Petugas</th>
               <th>Sifat surat</th>
-              <th>Status disposisi</th>
+              <th data-priority="3">Status disposisi</th>
               <th>Berkas surat masuk</th>
               <th data-priority="2">#</th>
             </tr>
@@ -109,13 +109,102 @@
   </div>
 </div>
 
-
+<!-- Modal Disposisi-->
+<!-- <button type="button" class="btn btn-primary" id="tombol">
+  Launch demo modal
+</button> -->
+<div class="modal fade" id="modal_disposisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="<?= url("c_surat_masuk/add_disposisi") ?>" id="form_modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_disposisiLabel">Disposisi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true" class="ki ki-close"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-15">
+            <input type="text" class="d-none" id="id_surat_dispos" name="id_surat_dispos">
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label">Prihal</label>
+              <label class="col-lg-9 col-form-label" id="prihal">SAASASSSS </label>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label">Dari </label>
+              <label class="col-lg-9 col-form-label" id="dari">SAASASSSS </label>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label">Kepada</label>
+              <div class="col-lg-9">
+                <input type="input" class="form-control" placeholder="Kepada" name="kepada" id="kepada">
+                <span class="form-text text-muted">Please enter your full name</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-3 col-form-label">Isi Disposisi</label>
+              <div class="col-lg-9">
+                <textarea type="text" class="form-control" placeholder="Isi Disposisi" name="isi" id="isi"></textarea>
+                <span class="form-text text-muted">We'll never share your email with anyone else</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary font-weight-bold">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">
+  $("#form_modal").submit(function(e) {
+    e.preventDefault();
+    var me = $(this);
+    $("#submit").prop('disabled', true).html('Loading...');
+    $(".form-group").find('.text-danger').remove();
+    $.ajax({
+      url: me.attr('action'),
+      type: 'post',
+      data: new FormData(this),
+      contentType: false,
+      cache: false,
+      dataType: 'JSON',
+      processData: false,
+      success: function(json) {
+        if (json.success == true) {
+          location.href = json.redirect;
+          return;
+        } else {
+          $("#submit").prop('disabled', false)
+            .html('Save');
+          $.each(json.alert, function(key, value) {
+            var element = $('#' + key);
+            $(element)
+              .closest('.form-group')
+              .find('.text-danger').remove();
+            $(element).after(value);
+          });
+        }
+      }
+    });
+  });
+
+  $("#tombol").click(function() {
+    //Fungsi yang akan dijalankan ketika tombol diklik
+    // alert("Tombol telah diklik");
+    $('#modal_disposisi').modal('show');
+  });
+  // $('#modal_disposisi').show();
+  // alert('WORK');
   $(document).ready(function() {
+
     var table;
     //datatables
+
     table = $('#table').DataTable({
 
       "processing": true, //Feature control the processing indicator.
@@ -149,9 +238,7 @@
       },
 
       //Set column definition initialisation properties.
-      "columnDefs": [
-
-        {
+      "columnDefs": [{
           "targets": 0,
           "orderable": false
         },
@@ -213,6 +300,25 @@
         },
       ],
     });
+    $('#table tbody').on('click', '#disposisi', function() {
+      var data = table.row($(this).parents('tr')).data();
+      clear_modal();
+      $("#id_surat_dispos").val($(this).data('id'));
+      $("#prihal").text(data[2]);
+      $("#dari").text(data[4]);
+      $("#kepada").val(data[5]);
+      $('#modal_disposisi').modal('show');
+      // console.log(data);
+      // alert(data);
+    });
+
+    function clear_modal() {
+      $("#id_surat_dispos").val('');
+      $("#kepada").val('');
+      $("#isi").val('');
+      $("#prihal").text('');
+      $("#dari").text('');
+    }
 
     $("#reload").click(function() {
       $("#no_surat").val("");
@@ -280,6 +386,8 @@
         }
       });
     });
+
+
 
 
   });
