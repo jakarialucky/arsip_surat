@@ -164,6 +164,7 @@ class C_surat_keluar extends Backend
         $save_data['sifat_surat'] = $this->input->post('sifat_surat', true);
         $save_data['deskripsi'] = $this->input->post('deskripsi', true);
         $save_data['id_petugas'] = $this->session->userdata('id_user');
+        $save_data['id_group'] = profile('id_group');
         $save_data['berkas_surat_keluar'] = $this->imageCopy($this->input->post('berkas_surat_keluar', true), $_POST['file-dir-berkas_surat_keluar']);
 
         $this->model->insert($save_data);
@@ -234,6 +235,7 @@ class C_surat_keluar extends Backend
         $save_data['sifat_surat'] = $this->input->post('sifat_surat', true);
         $save_data['deskripsi'] = $this->input->post('deskripsi', true);
         $save_data['id_petugas'] = $this->session->userdata('id_user');
+        $save_data['id_group'] = profile('id_group');
         $save_data['berkas_surat_keluar'] = $this->imageCopy($this->input->post('berkas_surat_keluar', true), $_POST['file-dir-berkas_surat_keluar']);
 
         $save = $this->model->change(dec_url($id), $save_data);

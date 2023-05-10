@@ -4,6 +4,7 @@
       <!-- <div class="card-header bg-primary text-white">
         <?= ucwords($title_module) ?>
       </div> -->
+
       <div class="card-header flex-wrap py-3">
         <div class="mb-2">
           <a href="<?= url("c_surat_masuk/add") ?>" class="btn btn-sm btn-success btn-icon-text"><i class="fa fa-file btn-icon-prepend"></i><?= cclang("add_new") ?></a>

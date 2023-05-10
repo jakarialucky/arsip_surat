@@ -38,6 +38,7 @@ class C_laporan_model extends MY_Model
   {
     $this->db->select('*');
     $this->db->from('tb_surat_masuk');
+    $this->db->where('id_group', profile('id_group'));
     $this->db->join('tb_jenis_surat', 'tb_jenis_surat.id_jenis_surat = tb_surat_masuk.id_jenis_surat', 'left');
     if ($tanggal_awal != '' || $tanggal_akhir != '') {
       $this->db->where('tgl_surat >=', $tanggal_awal);
@@ -51,6 +52,7 @@ class C_laporan_model extends MY_Model
   {
     $this->db->select('*');
     $this->db->from('tb_surat_keluar');
+    $this->db->where('id_group', profile('id_group'));
     if ($tanggal_awal != '' || $tanggal_akhir != '') {
       $this->db->where('tgl_surat >=', $tanggal_awal);
       $this->db->where('tgl_surat <=', $tanggal_akhir);
@@ -62,6 +64,7 @@ class C_laporan_model extends MY_Model
   {
     $this->db->select('*');
     $this->db->from('tbl_rba');
+    $this->db->where('id_group', profile('id_group'));
     if ($tanggal_awal != '' || $tanggal_akhir != '') {
       $this->db->where('tanggal_rba >=', $tanggal_awal);
       $this->db->where('tanggal_rba <=', $tanggal_akhir);
@@ -73,6 +76,7 @@ class C_laporan_model extends MY_Model
   {
     $this->db->select('*');
     $this->db->from('tbl_spj');
+    $this->db->where('id_group', profile('id_group'));
     if ($tanggal_awal != '' || $tanggal_akhir != '') {
       $this->db->where('tanggal_spj >=', $tanggal_awal);
       $this->db->where('tanggal_spj <=', $tanggal_akhir);
