@@ -148,8 +148,8 @@ if (!function_exists('is_image')) {
 			if (file_exists(FCPATH . "_temp/uploads/img/$params")) {
 				if ($ext === 'jpg' || $ext === 'jpeg' || $ext === 'ico' || $ext === 'png' || $ext === 'gif') {
 					// ekstensi file diizinkan, lakukan tindakan yang diinginkan
-					$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" data-fancybox="gallery" title="' . $params . '">
-		              <img src="' . base_url() . '_temp/uploads/img/' . $params . '" alt="' . $params . '" style="' . $style . '" class="' . $class . '" />
+					$str .= '<a href="' . base_url() . '_temp/uploads/img/' . $params . '" data-fancybox="gallery" title="' . $params . '" class="symbol symbol-50 flex-shrink-0">
+		              <img src="' . base_url() . '_temp/uploads/img/' . $params . '" alt="' . $params . '" style="' . $style . '" class=" img-thumbnail ' . $class . '" />
 		            </a>';
 				} else {
 					// ekstensi file tidak diizinkan, lakukan tindakan yang sesuai
@@ -160,8 +160,8 @@ if (!function_exists('is_image')) {
 			} else {
 				if ($ext === 'jpg' || $ext === 'jpeg' || $ext === 'ico' || $ext === 'png' || $ext === 'gif') {
 					// ekstensi file diizinkan, lakukan tindakan yang diinginkan
-					$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available">
-		              <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="' . $class . '" />
+					$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available" class="symbol symbol-50 flex-shrink-0">
+		              <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="img-thumbnail  ' . $class . '" />
 		            </a>';
 				} else {
 					// ekstensi file tidak diizinkan, lakukan tindakan yang sesuai
@@ -171,8 +171,8 @@ if (!function_exists('is_image')) {
 				}
 			}
 		} else {
-			$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available">
-	              <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="' . $class . '" />
+			$str .= '<a href="' . base_url() . '_temp/uploads/noimage.jpg" data-fancybox="gallery" title="No Image Available" class="symbol symbol-50 flex-shrink-0">
+	              <img src="' . base_url() . '_temp/uploads/noimage.jpg" alt="noimage" style="' . $style . '" class="img-thumbnail ' . $class . '" />
 	            </a>';
 		}
 
