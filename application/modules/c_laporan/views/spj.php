@@ -60,7 +60,14 @@
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',
-        'pdfHtml5',
+        // 'pdfHtml5',
+        {
+          extend: 'pdfHtml5',
+          orientation: 'landscape',
+          customize: function(doc) {
+            // atur kustomisasi dokumen PDF di sini
+          },
+        }
       ]
     });
 
