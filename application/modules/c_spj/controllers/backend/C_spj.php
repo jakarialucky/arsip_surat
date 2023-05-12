@@ -49,7 +49,7 @@ class C_spj extends Backend
         $rows[] = date("d-m-Y",  strtotime($row->tanggal_surat_spj));
         $rows[] = $row->no_invoice;
         $rows[] = $row->nama_pembayar;
-        $rows[] = $row->jumlah_uang;
+        $rows[] = number_format($row->jumlah_uang, 0, ',', '.');
         $rows[] = is_image($row->file);
 
         $rows[] = '
