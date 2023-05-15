@@ -29,8 +29,8 @@
                 <img src="<?= base_url() ?>_temp/uploads/img/<?= setting("logo") ?>" alt="logo">
               </div>
               <div class="text-center">
-                <h4>Hello! let's get started</h4>
-                <h6 class="font-weight-light">Please login to manage the system</h6>
+                <h4>Sistem Informasi Pengarsipan Dokumen</h4>
+                <!-- <h6 class="font-weight-light">Please login to manage the system</h6> -->
               </div>
               <form class="pt-3" action="<?= site_url(LOGIN_ROUTE . "/action") ?>" id="form">
                 <input type="hidden" name="token" class="form-control" value="<?= $this->session->token ?>">
