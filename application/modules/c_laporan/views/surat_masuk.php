@@ -56,7 +56,14 @@
 			<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
 
       buttons: [
-        'print',
+        // 'print',
+        {
+          extend: 'print',
+          orientation: 'landscape',
+          customize: function(doc) {
+            // atur kustomisasi dokumen PDF di sini
+          },
+        },
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',

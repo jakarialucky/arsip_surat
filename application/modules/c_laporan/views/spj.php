@@ -19,7 +19,7 @@
                 <th>No Invoice</th>
                 <th>Nama Pembayar</th>
                 <th>Jumlah Uang</th>
-                <th>File</th>
+                <!-- <th>File</th> -->
                 <th>Date Create</th>
               </tr>
             </thead>
@@ -31,8 +31,8 @@
                   <td><?php echo $row->tanggal_surat_spj; ?></td>
                   <td><?php echo $row->no_invoice; ?></td>
                   <td><?php echo $row->nama_pembayar; ?></td>
-                  <td><?php echo $row->jumlah_uang; ?></td>
-                  <td><?php echo $row->file; ?></td>
+                  <td><?php echo number_format($row->jumlah_uang, 0, ',', '.'); ?></td>
+                  <!-- <td><?php echo $row->file; ?></td> -->
                   <td><?php echo $row->date_create; ?></td>
                 </tr>
               <?php } ?>
@@ -56,7 +56,14 @@
 			<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
 
       buttons: [
-        'print',
+        // 'print',
+        {
+          extend: 'print',
+          orientation: 'landscape',
+          customize: function(doc) {
+            // atur kustomisasi dokumen PDF di sini
+          },
+        },
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',

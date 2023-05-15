@@ -79,6 +79,8 @@ class C_laporan_model extends MY_Model
       $this->db->where('tanggal_rba <=', $tanggal_akhir);
     }
     $query = $this->db->get();
+    // var_dump($query->result());
+    // die();
     return $query->result();
   }
   public function get_all_spj($tanggal_awal, $tanggal_akhir)

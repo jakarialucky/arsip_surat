@@ -23,7 +23,7 @@
             <ul class="menu-subnav">
               <li class="menu-item menu-item-parent" aria-haspopup="true">
                 <span class="menu-link">
-                  <span class="menu-text"><?= ucwords($menu->menu) ?></span>
+                  <span class="menu-text"><?= strtoupper(ucwords($menu->menu)) ?></span>
                 </span>
               </li>
               <?php foreach ($getSubMenu->result() as $sub_menu) : ?>
@@ -35,7 +35,7 @@
                       <i class="menu-bullet menu-bullet-dot">
                         <span></span>
                       </i>
-                      <span class="menu-text"><?= ucwords($sub_menu->menu) ?></span>
+                      <span class="menu-text"><?= strtoupper(ucwords($sub_menu->menu)) ?></span>
                     </a>
                   </li>
                 <?php endif; ?>
@@ -52,7 +52,7 @@
             <span class="<?= $menu->icon ?> menu-icon">
 
             </span>
-            <span class="menu-text"><?= ucwords($menu->menu) ?></span>
+            <span class="menu-text"><?= strtoupper(ucwords($menu->menu)) ?></span>
           </a>
         </li>
       <?php endif; ?>

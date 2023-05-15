@@ -14,24 +14,24 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nomor RBA</th>
+                <th>Perubahan Ke</th>
                 <th>Tanggal RBA</th>
                 <th>Nama RBA</th>
                 <th>No. Rekening Kegiatan RBA</th>
-                <th>Berkas RBA</th>
+                <!-- <th>Berkas RBA</th> -->
                 <th>Tanggal Buat</th>
               </tr>
             </thead>
             <tbody>
               <?php foreach ($rba as $row) { ?>
                 <tr>
-                  <td><?php echo $row['id_rba']; ?></td>
-                  <td><?php echo $row['nomor_rba']; ?></td>
-                  <td><?php echo $row['tanggal_rba']; ?></td>
-                  <td><?php echo $row['nama_rba']; ?></td>
-                  <td><?php echo $row['no_rekening_kegiatan_rba']; ?></td>
-                  <td><?php echo $row['berkas_rba']; ?></td>
-                  <td><?php echo $row['date_create']; ?></td>
+                  <td><?php echo $row->id_rba; ?></td>
+                  <td><?php echo $row->nomor_rba; ?></td>
+                  <td><?php echo $row->tanggal_rba; ?></td>
+                  <td><?php echo $row->nama_rba; ?></td>
+                  <td><?php echo $row->no_rekening_kegiatan_rba; ?></td>
+                  <!-- <td><?php echo $row->berkas_rba; ?></td> -->
+                  <td><?php echo $row->date_create; ?></td>
                 </tr>
               <?php } ?>
             </tbody>
@@ -54,7 +54,14 @@
 			<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
 
       buttons: [
-        'print',
+        // 'print',
+        {
+          extend: 'print',
+          orientation: 'landscape',
+          customize: function(doc) {
+            // atur kustomisasi dokumen PDF di sini
+          },
+        },
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',

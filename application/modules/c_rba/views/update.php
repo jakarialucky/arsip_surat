@@ -8,7 +8,7 @@
         <form action="<?= $action ?>" id="form" autocomplete="off">
 
           <div class="form-group">
-            <label>Nomor rba</label>
+            <label>Perubahan Ke</label>
             <input type="text" class="form-control form-control-sm" placeholder="Nomor rba" name="nomor_rba" id="nomor_rba" value="<?= $nomor_rba ?>">
           </div>
 

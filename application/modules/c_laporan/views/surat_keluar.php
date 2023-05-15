@@ -22,7 +22,7 @@
                 <th>Sifat Surat</th>
                 <th>Petugas</th>
                 <th>Deskripsi</th>
-                <th>Berkas Surat Keluar</th>
+                <!-- <th>Berkas Surat Keluar</th> -->
                 <th>Dibuat Pada</th>
               </tr>
             </thead>
@@ -38,7 +38,7 @@
                   <td><?php echo $surat->sifat_surat; ?></td>
                   <td><?php echo $surat->id_petugas; ?></td>
                   <td><?php echo $surat->deskripsi; ?></td>
-                  <td><?php echo $surat->berkas_surat_keluar; ?></td>
+                  <!-- <td><?php echo $surat->berkas_surat_keluar; ?></td> -->
                   <td><?php echo $surat->dibuat_pada; ?></td>
                 </tr>
               <?php } ?>
@@ -62,7 +62,14 @@
 			<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
 
       buttons: [
-        'print',
+        // 'print',
+        {
+          extend: 'print',
+          orientation: 'landscape',
+          customize: function(doc) {
+            // atur kustomisasi dokumen PDF di sini
+          },
+        },
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',
