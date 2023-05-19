@@ -51,24 +51,28 @@ class C_laporan extends Backend
   }
   function laporan_surat_masuk($tanggal_awal, $tanggal_akhir)
   {
+    $this->template->set_title(cclang("cetak") . " Laporan Surat Masuk");
     $data['surat_masuk'] = $this->model->get_all_surat_masuk($tanggal_awal, $tanggal_akhir);
     $this->template->view("surat_masuk", $data);
     // $this->load->view('surat_masuk', $data);
   }
   function laporan_surat_keluar($tanggal_awal, $tanggal_akhir)
   {
+    $this->template->set_title(cclang("cetak") . " Laporan Surat Keluar");
     $data['surat_keluar'] = $this->model->get_all_surat_keluar($tanggal_awal, $tanggal_akhir);
     $this->template->view("surat_keluar", $data);
     // $this->load->view('surat_masuk', $data);
   }
   function laporan_rba($tanggal_awal, $tanggal_akhir)
   {
+    $this->template->set_title(cclang("cetak") . " Laporan RBA");
     $data['rba'] = $this->model->get_all_rba($tanggal_awal, $tanggal_akhir);
     $this->template->view("rba", $data);
     // $this->load->view('surat_masuk', $data);
   }
   function laporan_spj($tanggal_awal, $tanggal_akhir)
   {
+    $this->template->set_title(cclang("cetak") . " Laporan SPJ");
     $data['spj'] = $this->model->get_all_spj($tanggal_awal, $tanggal_akhir);
     $this->template->view("spj", $data);
     // $this->load->view('surat_masuk', $data);
