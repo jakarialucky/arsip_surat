@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['time_zone'] = "Asia/Makassar";
 date_default_timezone_set($config['time_zone']);
@@ -28,8 +28,8 @@ $config['max_upload'] = 10000;
 |
 */
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
-$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
-$config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME']));
+$config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
+$config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME']));
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -57,7 +57,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']    = 'REQUEST_URI';
+$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ $config['url_suffix'] = '.html';
 | than english.
 |
 */
-$config['language']    = 'english';
+$config['language']	= 'indonesia';
 
 /*
 |--------------------------------------------------------------------------
@@ -330,7 +330,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = 'qwerty123456';
-$config['encryption_url'] = true;
+$config['encryption_url'] = TRUE;
 /*
 |--------------------------------------------------------------------------
 | Session Variables
@@ -405,11 +405,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']    = '';
-$config['cookie_domain']    = '';
-$config['cookie_path']        = '/';
-$config['cookie_secure']    = FALSE;
-$config['cookie_httponly']     = FALSE;
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
+$config['cookie_path']		= '/';
+$config['cookie_secure']	= FALSE;
+$config['cookie_httponly'] 	= FALSE;
 
 /*
 |--------------------------------------------------------------------------

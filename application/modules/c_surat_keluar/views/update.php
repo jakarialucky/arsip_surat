@@ -68,6 +68,7 @@
                 <button class="file-upload-browse btn btn-primary btn-sm" data-id="berkas_surat_keluar" type="button">Select File</button>
               </span>
             </div>
+            <span class="form-text text-muted">Hasil pdf max 10 mb</span>
             <div id="berkas_surat_keluar"></div>
           </div>
 
