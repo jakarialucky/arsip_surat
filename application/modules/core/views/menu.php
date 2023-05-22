@@ -15,7 +15,7 @@
             <span class="<?= $menu->icon ?> menu-icon">
 
             </span>
-            <span class="menu-text"><?= ucwords($menu->menu) ?></span>
+            <span class="menu-text"><?= strtoupper(ucwords($menu->menu)) ?></span>
             <i class="menu-arrow"></i>
           </a>
           <div class="menu-submenu">
