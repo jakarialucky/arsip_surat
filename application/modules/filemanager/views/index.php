@@ -16,12 +16,12 @@
           <table class="table table-bordered table-striped" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Image</th>
-                <th>File Name</th>
-                <th>Ket</th>
-                <th>Created</th>
-                <th>#</th>
+                <th><?= strtoupper("Select") ?>
+                <th><?= strtoupper("File") ?>
+                <th><?= strtoupper("Nama File") ?>
+                <th><?= strtoupper("Ket") ?>
+                <th><?= strtoupper("Dibuat") ?>
+                <th><?= strtoupper("Aksi") ?>
               </tr>
             </thead>
           </table>

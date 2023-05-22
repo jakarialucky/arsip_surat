@@ -22,7 +22,7 @@ $lang['detail'] = "Detail";
 $lang['cancel'] = "Cancel";
 $lang['back'] = "Back";
 $lang['access_control'] = "Access Control";
-$lang['reload'] = "Reload";
+$lang['reload'] = "<?= cclang("reload") ?>";
 $lang['setting'] = "Setting";
 $lang['select_all'] = "Select All";
 $lang['delete_selected'] = "Delete selected";
