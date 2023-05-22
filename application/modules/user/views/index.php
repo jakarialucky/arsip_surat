@@ -13,14 +13,14 @@
         <table class="table table-bordered table-striped" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Group</th>
-              <th>Is Active</th>
-              <th>Join</th>
-              <th>Last login</th>
-              <th>#</th>
+              <th><?= strtoupper("Foto Profil") ?>
+              <th><?= strtoupper("Full Name") ?>
+              <th><?= strtoupper("Email") ?>
+              <th><?= strtoupper("Group") ?>
+              <th><?= strtoupper("Is Active") ?>
+              <th><?= strtoupper("Join") ?>
+              <th><?= strtoupper("Last login") ?>
+              <th><?= strtoupper("Aksi") ?>
             </tr>
           </thead>
 

@@ -47,12 +47,12 @@
         <table class="table table-bordered table-striped dt-responsive nowrap" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th>Perubahan Ke</th>
-              <th>Tanggal rba</th>
-              <th>Nama rba</th>
-              <th>No rekening kegiatan rba</th>
-              <th>Berkas rba</th>
-              <th>#</th>
+              <th><?= strtoupper("Perubahan Ke") ?>
+              <th><?= strtoupper("Tanggal rba") ?>
+              <th><?= strtoupper("Nama rba") ?>
+              <th><?= strtoupper("No rekening kegiatan rba") ?>
+              <th><?= strtoupper("Berkas rba") ?>
+              <th><?= strtoupper("AKSI") ?>
             </tr>
           </thead>
 

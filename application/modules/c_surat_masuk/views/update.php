@@ -38,7 +38,13 @@
 
           <div class="form-group">
             <label>Ditujukan</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan" value="<?= $ditujukan ?>">
+            <!-- <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan" value="<?= $ditujukan ?>"> -->
+            <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="ditujukan" id="ditujukan">
+              <option value=""></option>
+              <option <?= ($ditujukan == "Mutu" ? "selected" : "") ?> value="Mutu">Mutu</option>
+              <option <?= ($ditujukan == "Perbekalan" ? "selected" : "") ?> value="Perbekalan">Perbekalan</option>
+
+            </select>
           </div>
 
           <div class="form-group">

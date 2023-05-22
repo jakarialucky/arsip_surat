@@ -88,18 +88,18 @@
         <table class="table table-bordered table-striped dt-responsive nowrap" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th data-priority="1">No surat</th>
-              <th>Tanggal Surat</th>
-              <th>Perihal</th>
-              <th>Jenis Surat</th>
-              <th>Pengirim</th>
-              <th>Ditujukan</th>
-              <th>Deskripsi</th>
-              <th>Petugas</th>
-              <th>Sifat surat</th>
-              <th data-priority="3">Status disposisi</th>
-              <th>Berkas surat masuk</th>
-              <th data-priority="2">#</th>
+              <th data-priority="1"><?= strtoupper("No surat") ?>
+              <th><?= strtoupper("Tanggal Surat") ?>
+              <th><?= strtoupper("Perihal") ?>
+              <th><?= strtoupper("Jenis Surat") ?>
+              <th><?= strtoupper("Pengirim") ?>
+              <th><?= strtoupper("Ditujukan") ?>
+              <th><?= strtoupper("Deskripsi") ?>
+              <th><?= strtoupper("Petugas") ?>
+              <th><?= strtoupper("Sifat surat") ?>
+              <th data-priority="3"><?= strtoupper("Status disposisi") ?>
+              <th><?= strtoupper("Berkas surat masuk") ?>
+              <th data-priority="2"><?= strtoupper("Aksi") ?>
             </tr>
           </thead>
 

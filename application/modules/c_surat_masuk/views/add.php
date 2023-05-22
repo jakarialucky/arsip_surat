@@ -38,7 +38,13 @@
 
           <div class="form-group">
             <label>Ditujukan</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan">
+            <!-- <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan"> -->
+            <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="ditujukan" id="ditujukan">
+              <option value=""></option>
+              <option value="Mutu">Mutu</option>
+              <option value="Perbekalan">Perbekalan</option>
+
+            </select>
           </div>
 
           <div class="form-group">

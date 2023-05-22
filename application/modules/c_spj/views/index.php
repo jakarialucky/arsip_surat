@@ -51,13 +51,13 @@
         <table class="table table-bordered table-striped dt-responsive nowrap" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th>Nomor spj</th>
-              <th>Tanggal surat spj</th>
-              <th>No invoice</th>
-              <th>Nama pembayar</th>
-              <th>Jumlah uang</th>
-              <th>File</th>
-              <th>#</th>
+              <th><?= strtoupper("Nomor spj") ?>
+              <th><?= strtoupper("Tanggal surat spj") ?>
+              <th><?= strtoupper("No invoice") ?>
+              <th><?= strtoupper("Nama pembayar") ?>
+              <th><?= strtoupper("Jumlah uang") ?>
+              <th><?= strtoupper("File") ?>
+              <th><?= strtoupper("Aksi") ?>
             </tr>
           </thead>
 

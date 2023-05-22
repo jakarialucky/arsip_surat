@@ -13,14 +13,14 @@
           <table style="width:100%" id="table" class="table table-bordered table-striped dt-responsive nowrap">
             <thead>
               <tr>
-                <th>No. Surat</th>
-                <th>Tgl. Surat</th>
-                <th>Perihal</th>
-                <th>Jenis Surat</th>
-                <th>Pengirim</th>
-                <th>Ditujukan</th>
-                <th>Sifat Surat</th>
-                <th>Status Disposisi</th>
+                <th><?= strtoupper("No. Surat") ?>
+                <th><?= strtoupper("Tgl. Surat") ?>
+                <th><?= strtoupper("Perihal") ?>
+                <th><?= strtoupper("Jenis Surat") ?>
+                <th><?= strtoupper("Pengirim") ?>
+                <th><?= strtoupper("Ditujukan") ?>
+                <th><?= strtoupper("Sifat Surat") ?>
+                <th><?= strtoupper("Status Disposisi") ?>
               </tr>
             </thead>
             <tbody>

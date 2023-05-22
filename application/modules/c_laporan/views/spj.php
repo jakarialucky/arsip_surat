@@ -13,14 +13,14 @@
           <table style="width:100%" id="table" class="table table-bordered table-striped dt-responsive nowrap">
             <thead>
               <tr>
-                <th>ID SPJ</th>
-                <th>Nomor SPJ</th>
-                <th>Tanggal Surat SPJ</th>
-                <th>No Invoice</th>
-                <th>Nama Pembayar</th>
-                <th>Jumlah Uang</th>
-                <!-- <th>File</th> -->
-                <th>Date Create</th>
+                <th><?= strtoupper("ID SPJ") ?>
+                <th><?= strtoupper("Nomor SPJ") ?>
+                <th><?= strtoupper("Tanggal Surat SPJ") ?>
+                <th><?= strtoupper("No Invoice") ?>
+                <th><?= strtoupper("Nama Pembayar") ?>
+                <th><?= strtoupper("Jumlah Uang") ?>
+                  <!-- <th><?= strtoupper("File") ?> -->
+                <th><?= strtoupper("Date Create") ?>
               </tr>
             </thead>
             <tbody>
@@ -31,7 +31,7 @@
                   <td><?php echo $row->tanggal_surat_spj; ?></td>
                   <td><?php echo $row->no_invoice; ?></td>
                   <td><?php echo $row->nama_pembayar; ?></td>
-                  <td><?php echo number_format($row->jumlah_uang, 0, ',', '.'); ?></td>
+                  <td><?php echo "Rp. " . number_format($row->jumlah_uang, 0, ',', '.'); ?></td>
                   <!-- <td><?php echo $row->file; ?></td> -->
                   <td><?php echo $row->date_create; ?></td>
                 </tr>

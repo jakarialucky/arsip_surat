@@ -13,13 +13,13 @@
           <table style="width:100%" id="table" class="table table-bordered table-striped dt-responsive nowrap">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Perubahan Ke</th>
-                <th>Tanggal RBA</th>
-                <th>Nama RBA</th>
-                <th>No. Rekening Kegiatan RBA</th>
-                <!-- <th>Berkas RBA</th> -->
-                <th>Tanggal Buat</th>
+                <th><?= strtoupper("ID") ?>
+                <th><?= strtoupper("Perubahan Ke") ?>
+                <th><?= strtoupper("Tanggal RBA") ?>
+                <th><?= strtoupper("Nama RBA") ?>
+                <th><?= strtoupper("No. Rekening Kegiatan RBA") ?>
+                  <!-- <th><?= strtoupper("Berkas RBA") ?> -->
+                <th><?= strtoupper("Tanggal Buat") ?>
               </tr>
             </thead>
             <tbody>
