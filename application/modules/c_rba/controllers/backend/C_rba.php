@@ -14,7 +14,7 @@
 class C_rba extends Backend
 {
 
-  private $title = "Surat Rba";
+  private $title = "Rba";
 
 
   public function __construct()

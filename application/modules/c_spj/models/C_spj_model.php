@@ -17,9 +17,9 @@ class C_spj_model extends MY_Model
 
   private $table        = "tbl_spj";
   private $primary_key  = "id_spj";
-  private $column_order = array('nomor_spj', 'tanggal_surat_spj', 'no_invoice', 'nama_pembayar', 'jumlah_uang', 'file');
+  private $column_order = array('nomor_spj', 'tanggal_surat_spj', 'no_invoice', 'uraian', 'jumlah_uang', 'file');
   private $order        = array('tbl_spj.id_spj' => "DESC");
-  private $select       = "tbl_spj.id_spj,tbl_spj.nomor_spj,tbl_spj.tanggal_surat_spj,tbl_spj.no_invoice,tbl_spj.nama_pembayar,tbl_spj.jumlah_uang,tbl_spj.file";
+  private $select       = "tbl_spj.id_spj,tbl_spj.nomor_spj,tbl_spj.tanggal_surat_spj,tbl_spj.no_invoice,tbl_spj.uraian,tbl_spj.jumlah_uang,tbl_spj.file";
 
   public function __construct()
   {
@@ -55,8 +55,8 @@ class C_spj_model extends MY_Model
       $this->db->like("tbl_spj.no_invoice", $this->input->post("no_invoice"));
     }
 
-    if ($this->input->post("nama_pembayar")) {
-      $this->db->like("tbl_spj.nama_pembayar", $this->input->post("nama_pembayar"));
+    if ($this->input->post("uraian")) {
+      $this->db->like("tbl_spj.uraian", $this->input->post("uraian"));
     }
 
     if ($this->input->post("jumlah_uang")) {

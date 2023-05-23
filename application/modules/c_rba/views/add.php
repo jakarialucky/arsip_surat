@@ -13,12 +13,12 @@
           </div>
 
           <div class="form-group">
-            <label>Tanggal rba</label>
+            <label>Tanggal RBA</label>
             <input type="date" class="form-control form-control-sm" placeholder="Tanggal rba" name="tanggal_rba" id="tanggal_rba">
           </div>
 
           <div class="form-group">
-            <label>Nama rba</label>
+            <label>Nama RBA</label>
             <input type="text" class="form-control form-control-sm" placeholder="Nama rba" name="nama_rba" id="nama_rba">
           </div>
 
@@ -28,7 +28,7 @@
           </div>
 
           <div class="form-group">
-            <label>Berkas rba</label>
+            <label>Berkas RBA</label>
             <input type="file" name="img" class="file-upload-default d-none" data-id="berkas_rba" />
             <div class="input-group col-xs-12">
               <input type="hidden" class="file-dir" name="file-dir-berkas_rba" data-id="berkas_rba" />

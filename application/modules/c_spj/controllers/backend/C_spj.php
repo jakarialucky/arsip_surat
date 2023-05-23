@@ -14,7 +14,7 @@
 class C_spj extends Backend
 {
 
-  private $title = "Surat Spj";
+  private $title = "Spj";
 
 
   public function __construct()
@@ -48,7 +48,7 @@ class C_spj extends Backend
         $rows[] = $row->nomor_spj;
         $rows[] = date("d-m-Y",  strtotime($row->tanggal_surat_spj));
         $rows[] = $row->no_invoice;
-        $rows[] = $row->nama_pembayar;
+        $rows[] = $row->uraian;
         $rows[] = "Rp. " . number_format($row->jumlah_uang, 0, ',', '.');
         $rows[] = is_image($row->file);
 
@@ -98,7 +98,7 @@ class C_spj extends Backend
         "nomor_spj" => $row->nomor_spj,
         "tanggal_surat_spj" => $row->tanggal_surat_spj,
         "no_invoice" => $row->no_invoice,
-        "nama_pembayar" => $row->nama_pembayar,
+        "uraian" => $row->uraian,
         "jumlah_uang" => $row->jumlah_uang,
         "file" => $row->file,
       );
@@ -117,7 +117,7 @@ class C_spj extends Backend
       'nomor_spj' => set_value("nomor_spj"),
       'tanggal_surat_spj' => set_value("tanggal_surat_spj"),
       'no_invoice' => set_value("no_invoice"),
-      'nama_pembayar' => set_value("nama_pembayar"),
+      'uraian' => set_value("uraian"),
       'jumlah_uang' => set_value("jumlah_uang"),
       'file' => set_value("file"),
     );
@@ -136,7 +136,7 @@ class C_spj extends Backend
       $this->form_validation->set_rules("nomor_spj", "* Nomor spj", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_surat_spj", "* Tanggal surat spj", "trim|xss_clean");
       $this->form_validation->set_rules("no_invoice", "* No invoice", "trim|xss_clean");
-      $this->form_validation->set_rules("nama_pembayar", "* Nama pembayar", "trim|xss_clean");
+      $this->form_validation->set_rules("uraian", "* uraian", "trim|xss_clean");
       $this->form_validation->set_rules("jumlah_uang", "* Jumlah uang", "trim|xss_clean");
       $this->form_validation->set_rules("file", "* File", "trim|xss_clean");
       $this->form_validation->set_error_delimiters('<i class="error text-danger" style="font-size:11px">', '</i>');
@@ -145,7 +145,7 @@ class C_spj extends Backend
         $save_data['nomor_spj'] = $this->input->post('nomor_spj', true);
         $save_data['tanggal_surat_spj'] = date("Y-m-d",  strtotime($this->input->post('tanggal_surat_spj', true)));
         $save_data['no_invoice'] = $this->input->post('no_invoice', true);
-        $save_data['nama_pembayar'] = $this->input->post('nama_pembayar', true);
+        $save_data['uraian'] = $this->input->post('uraian', true);
         $save_data['jumlah_uang'] = $this->input->post('jumlah_uang', true);
         $save_data['id_group'] = profile('id_group');
         $save_data['file'] = $this->imageCopy($this->input->post('file', true), $_POST['file-dir-file']);
@@ -175,7 +175,7 @@ class C_spj extends Backend
         'nomor_spj' => set_value("nomor_spj", $row->nomor_spj),
         'tanggal_surat_spj' => $row->tanggal_surat_spj == "" ? "" : date("Y-m-d",  strtotime($row->tanggal_surat_spj)),
         'no_invoice' => set_value("no_invoice", $row->no_invoice),
-        'nama_pembayar' => set_value("nama_pembayar", $row->nama_pembayar),
+        'uraian' => set_value("uraian", $row->uraian),
         'jumlah_uang' => set_value("jumlah_uang", $row->jumlah_uang),
         'file' => set_value("file", $row->file),
       );
@@ -197,7 +197,7 @@ class C_spj extends Backend
       $this->form_validation->set_rules("nomor_spj", "* Nomor spj", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_surat_spj", "* Tanggal surat spj", "trim|xss_clean");
       $this->form_validation->set_rules("no_invoice", "* No invoice", "trim|xss_clean");
-      $this->form_validation->set_rules("nama_pembayar", "* Nama pembayar", "trim|xss_clean");
+      $this->form_validation->set_rules("uraian", "* uraian", "trim|xss_clean");
       $this->form_validation->set_rules("jumlah_uang", "* Jumlah uang", "trim|xss_clean");
       $this->form_validation->set_rules("file", "* File", "trim|xss_clean");
       $this->form_validation->set_error_delimiters('<i class="error text-danger" style="font-size:11px">', '</i>');
@@ -206,7 +206,7 @@ class C_spj extends Backend
         $save_data['nomor_spj'] = $this->input->post('nomor_spj', true);
         $save_data['tanggal_surat_spj'] = date("Y-m-d",  strtotime($this->input->post('tanggal_surat_spj', true)));
         $save_data['no_invoice'] = $this->input->post('no_invoice', true);
-        $save_data['nama_pembayar'] = $this->input->post('nama_pembayar', true);
+        $save_data['uraian'] = $this->input->post('uraian', true);
         $save_data['jumlah_uang'] = $this->input->post('jumlah_uang', true);
         $save_data['id_group'] = profile('id_group');
         $save_data['file'] = $this->imageCopy($this->input->post('file', true), $_POST['file-dir-file']);

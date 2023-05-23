@@ -25,7 +25,7 @@
             </div>
 
             <div class="form-group col-md-6">
-              <input type="text" id="nama_pembayar" class="form-control form-control-sm" placeholder="Nama pembayar" />
+              <input type="text" id="uraian" class="form-control form-control-sm" placeholder="Uraian" />
             </div>
 
             <div class="form-group col-md-6">
@@ -54,7 +54,7 @@
               <th><?= strtoupper("Nomor spj") ?>
               <th><?= strtoupper("Tanggal surat spj") ?>
               <th><?= strtoupper("No invoice") ?>
-              <th><?= strtoupper("Nama pembayar") ?>
+              <th><?= strtoupper("Uraian") ?>
               <th><?= strtoupper("Jumlah uang") ?>
               <th><?= strtoupper("File") ?>
               <th><?= strtoupper("Aksi") ?>
@@ -96,7 +96,7 @@
           data.nomor_spj = $("#nomor_spj").val();
           data.tanggal_surat_spj = $("#tanggal_surat_spj").val();
           data.no_invoice = $("#no_invoice").val();
-          data.nama_pembayar = $("#nama_pembayar").val();
+          data.uraian = $("#uraian").val();
           data.jumlah_uang = $("#jumlah_uang").val();
           data.file = $("#file").val();
         }
@@ -147,7 +147,7 @@
       $("#nomor_spj").val("");
       $("#tanggal_surat_spj").val("");
       $("#no_invoice").val("");
-      $("#nama_pembayar").val("");
+      $("#uraian").val("");
       $("#jumlah_uang").val("");
       $("#file").val("");
       table.ajax.reload();

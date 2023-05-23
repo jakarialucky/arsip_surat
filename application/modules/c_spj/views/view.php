@@ -19,8 +19,8 @@
           <td><?=$no_invoice?></td>
         </tr>
         <tr>
-          <td>Nama pembayar</td>
-          <td><?=$nama_pembayar?></td>
+          <td>uraian</td>
+          <td><?=$uraian?></td>
         </tr>
         <tr>
           <td>Jumlah uang</td>

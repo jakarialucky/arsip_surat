@@ -8,12 +8,12 @@
         <form action="<?= $action ?>" id="form" autocomplete="off">
 
           <div class="form-group">
-            <label>Nomor spj</label>
+            <label>Nomor SPJ</label>
             <input type="text" class="form-control form-control-sm" placeholder="Nomor spj" name="nomor_spj" id="nomor_spj" value="<?= $nomor_spj ?>">
           </div>
 
           <div class="form-group">
-            <label>Tanggal surat spj</label>
+            <label>Tanggal surat SPJ</label>
             <input type="date" class="form-control form-control-sm" placeholder="Tanggal surat spj" name="tanggal_surat_spj" id="tanggal_surat_spj" value="<?= $tanggal_surat_spj ?>">
           </div>
 
@@ -23,8 +23,8 @@
           </div>
 
           <div class="form-group">
-            <label>Nama pembayar</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Nama pembayar" name="nama_pembayar" id="nama_pembayar" value="<?= $nama_pembayar ?>">
+            <label>Uraian</label>
+            <input type="text" class="form-control form-control-sm" placeholder="uraian" name="uraian" id="uraian" value="<?= $uraian ?>">
           </div>
 
           <div class="form-group">

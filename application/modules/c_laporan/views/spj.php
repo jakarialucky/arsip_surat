@@ -17,7 +17,7 @@
                 <th><?= strtoupper("Nomor SPJ") ?>
                 <th><?= strtoupper("Tanggal Surat SPJ") ?>
                 <th><?= strtoupper("No Invoice") ?>
-                <th><?= strtoupper("Nama Pembayar") ?>
+                <th><?= strtoupper("uraian") ?>
                 <th><?= strtoupper("Jumlah Uang") ?>
                   <!-- <th><?= strtoupper("File") ?> -->
                 <th><?= strtoupper("Date Create") ?>
@@ -30,7 +30,7 @@
                   <td><?php echo $row->nomor_spj; ?></td>
                   <td><?php echo $row->tanggal_surat_spj; ?></td>
                   <td><?php echo $row->no_invoice; ?></td>
-                  <td><?php echo $row->nama_pembayar; ?></td>
+                  <td><?php echo $row->uraian; ?></td>
                   <td><?php echo "Rp. " . number_format($row->jumlah_uang, 0, ',', '.'); ?></td>
                   <!-- <td><?php echo $row->file; ?></td> -->
                   <td><?php echo $row->date_create; ?></td>
