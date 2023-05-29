@@ -7,8 +7,8 @@
       <div class="card-body">
         <table class="table table-bordered table-striped">
         <tr>
-          <td>Nomor rba</td>
-          <td><?=$nomor_rba?></td>
+          <td>perubahan ke</td>
+          <td><?=$perubahan_ke?></td>
         </tr>
       <tr>
         <td>Tanggal rba</td>

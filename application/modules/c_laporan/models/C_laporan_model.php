@@ -17,9 +17,9 @@ class C_laporan_model extends MY_Model
 
   private $table        = "tbl_rba";
   private $primary_key  = "id_rba";
-  private $column_order = array('nomor_rba', 'tanggal_rba', 'nama_rba', 'no_rekening_kegiatan_rba', 'berkas_rba');
+  private $column_order = array('perubahan_ke', 'tanggal_rba', 'nama_rba', 'no_rekening_kegiatan_rba', 'berkas_rba');
   private $order        = array('tbl_rba.id_rba' => "DESC");
-  private $select       = "tbl_rba.id_rba,tbl_rba.nomor_rba,tbl_rba.tanggal_rba,tbl_rba.nama_rba,tbl_rba.no_rekening_kegiatan_rba,tbl_rba.berkas_rba";
+  private $select       = "tbl_rba.id_rba,tbl_rba.perubahan_ke,tbl_rba.tanggal_rba,tbl_rba.nama_rba,tbl_rba.no_rekening_kegiatan_rba,tbl_rba.berkas_rba";
 
   public function __construct()
   {

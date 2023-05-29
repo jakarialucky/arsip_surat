@@ -9,7 +9,7 @@
 
           <div class="form-group">
             <label>Perubahan Ke</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Nomor rba" name="nomor_rba" id="nomor_rba" value="<?= $nomor_rba ?>">
+            <input type="text" class="form-control form-control-sm" placeholder="perubahan ke" name="perubahan_ke" id="perubahan_ke" value="<?= $perubahan_ke ?>">
           </div>
 
           <div class="form-group">

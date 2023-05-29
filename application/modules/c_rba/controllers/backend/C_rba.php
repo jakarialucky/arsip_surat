@@ -14,7 +14,7 @@
 class C_rba extends Backend
 {
 
-  private $title = "Rba";
+  private $title = "Rencana belanja anggaran";
 
 
   public function __construct()
@@ -45,7 +45,7 @@ class C_rba extends Backend
       $data = array();
       foreach ($list as $row) {
         $rows = array();
-        $rows[] = $row->nomor_rba;
+        $rows[] = $row->perubahan_ke;
         $rows[] = date("d-m-Y",  strtotime($row->tanggal_rba));
         $rows[] = $row->nama_rba;
         $rows[] = $row->no_rekening_kegiatan_rba;
@@ -94,7 +94,7 @@ class C_rba extends Backend
     if ($row = $this->model->find(dec_url($id))) {
       $this->template->set_title("Detail " . $this->title);
       $data = array(
-        "nomor_rba" => $row->nomor_rba,
+        "perubahan_ke" => $row->perubahan_ke,
         "tanggal_rba" => $row->tanggal_rba,
         "nama_rba" => $row->nama_rba,
         "no_rekening_kegiatan_rba" => $row->no_rekening_kegiatan_rba,
@@ -112,7 +112,7 @@ class C_rba extends Backend
     $this->template->set_title(cclang("add") . " " . $this->title);
     $data = array(
       'action' => url("c_rba/add_action"),
-      'nomor_rba' => set_value("nomor_rba"),
+      'perubahan_ke' => set_value("perubahan_ke"),
       'tanggal_rba' => set_value("tanggal_rba"),
       'nama_rba' => set_value("nama_rba"),
       'no_rekening_kegiatan_rba' => set_value("no_rekening_kegiatan_rba"),
@@ -130,7 +130,7 @@ class C_rba extends Backend
       }
 
       $json = array('success' => false);
-      $this->form_validation->set_rules("nomor_rba", "* Nomor rba", "trim|xss_clean|required");
+      $this->form_validation->set_rules("perubahan_ke", "* perubahan ke", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_rba", "* Tanggal rba", "trim|xss_clean");
       $this->form_validation->set_rules("nama_rba", "* Nama rba", "trim|xss_clean");
       $this->form_validation->set_rules("no_rekening_kegiatan_rba", "* No rekening kegiatan rba", "trim|xss_clean");
@@ -138,7 +138,7 @@ class C_rba extends Backend
       $this->form_validation->set_error_delimiters('<i class="error text-danger" style="font-size:11px">', '</i>');
 
       if ($this->form_validation->run()) {
-        $save_data['nomor_rba'] = $this->input->post('nomor_rba', true);
+        $save_data['perubahan_ke'] = $this->input->post('perubahan_ke', true);
         $save_data['tanggal_rba'] = date("Y-m-d",  strtotime($this->input->post('tanggal_rba', true)));
         $save_data['nama_rba'] = $this->input->post('nama_rba', true);
         $save_data['no_rekening_kegiatan_rba'] = $this->input->post('no_rekening_kegiatan_rba', true);
@@ -167,7 +167,7 @@ class C_rba extends Backend
       $this->template->set_title(cclang("update") . " " . $this->title);
       $data = array(
         'action' => url("c_rba/update_action/$id"),
-        'nomor_rba' => set_value("nomor_rba", $row->nomor_rba),
+        'perubahan_ke' => set_value("perubahan_ke", $row->perubahan_ke),
         'tanggal_rba' => $row->tanggal_rba == "" ? "" : date("Y-m-d",  strtotime($row->tanggal_rba)),
         'nama_rba' => set_value("nama_rba", $row->nama_rba),
         'no_rekening_kegiatan_rba' => set_value("no_rekening_kegiatan_rba", $row->no_rekening_kegiatan_rba),
@@ -188,7 +188,7 @@ class C_rba extends Backend
       }
 
       $json = array('success' => false);
-      $this->form_validation->set_rules("nomor_rba", "* Nomor rba", "trim|xss_clean|required");
+      $this->form_validation->set_rules("perubahan_ke", "* perubahan ke", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_rba", "* Tanggal rba", "trim|xss_clean");
       $this->form_validation->set_rules("nama_rba", "* Nama rba", "trim|xss_clean");
       $this->form_validation->set_rules("no_rekening_kegiatan_rba", "* No rekening kegiatan rba", "trim|xss_clean");
@@ -196,7 +196,7 @@ class C_rba extends Backend
       $this->form_validation->set_error_delimiters('<i class="error text-danger" style="font-size:11px">', '</i>');
 
       if ($this->form_validation->run()) {
-        $save_data['nomor_rba'] = $this->input->post('nomor_rba', true);
+        $save_data['perubahan_ke'] = $this->input->post('perubahan_ke', true);
         $save_data['tanggal_rba'] = date("Y-m-d",  strtotime($this->input->post('tanggal_rba', true)));
         $save_data['nama_rba'] = $this->input->post('nama_rba', true);
         $save_data['no_rekening_kegiatan_rba'] = $this->input->post('no_rekening_kegiatan_rba', true);

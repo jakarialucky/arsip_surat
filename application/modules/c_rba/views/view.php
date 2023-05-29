@@ -8,7 +8,7 @@
         <table class="table table-bordered table-striped">
           <tr>
             <td>Perubahan Ke</td>
-            <td><?= $nomor_rba ?></td>
+            <td><?= $perubahan_ke ?></td>
           </tr>
           <tr>
             <td>Tanggal rba</td>

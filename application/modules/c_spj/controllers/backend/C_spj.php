@@ -14,7 +14,7 @@
 class C_spj extends Backend
 {
 
-  private $title = "Spj";
+  private $title = " surat pertanggung jawaban";
 
 
   public function __construct()

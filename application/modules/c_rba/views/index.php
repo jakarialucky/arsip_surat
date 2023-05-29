@@ -13,7 +13,7 @@
         <form autocomplete="off" class="content-filter" style="display: none;">
           <div class="row">
             <div class="form-group col-md-6">
-              <input type="text" id="nomor_rba" class="form-control form-control-sm" placeholder="Nomor rba" />
+              <input type="text" id="perubahan_ke" class="form-control form-control-sm" placeholder="perubahan ke" />
             </div>
 
             <div class="form-group col-md-6">
@@ -88,7 +88,7 @@
         "url": "<?= url("c_rba/json") ?>",
         "type": "POST",
         "data": function(data) {
-          data.nomor_rba = $("#nomor_rba").val();
+          data.perubahan_ke = $("#perubahan_ke").val();
           data.tanggal_rba = $("#tanggal_rba").val();
           data.nama_rba = $("#nama_rba").val();
           data.no_rekening_kegiatan_rba = $("#no_rekening_kegiatan_rba").val();
@@ -133,7 +133,7 @@
     });
 
     $("#reload").click(function() {
-      $("#nomor_rba").val("");
+      $("#perubahan_ke").val("");
       $("#tanggal_rba").val("");
       $("#nama_rba").val("");
       $("#no_rekening_kegiatan_rba").val("");

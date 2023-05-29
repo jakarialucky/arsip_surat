@@ -91,7 +91,7 @@ class C_laporan extends Backend
       $data = array();
       foreach ($list as $row) {
         $rows = array();
-        $rows[] = $row->nomor_rba;
+        $rows[] = $row->perubahan_ke;
         $rows[] = date("d-m-Y",  strtotime($row->tanggal_rba));
         $rows[] = $row->nama_rba;
         $rows[] = $row->no_rekening_kegiatan_rba;

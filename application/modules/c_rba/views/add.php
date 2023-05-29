@@ -9,7 +9,7 @@
 
           <div class="form-group">
             <label>Perubahan Ke</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Nomor rba" name="nomor_rba" id="nomor_rba">
+            <input type="text" class="form-control form-control-sm" placeholder="perubahan ke" name="perubahan_ke" id="perubahan_ke">
           </div>
 
           <div class="form-group">
@@ -19,7 +19,14 @@
 
           <div class="form-group">
             <label>Nama RBA</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Nama rba" name="nama_rba" id="nama_rba">
+            <!-- <input type="text" class="form-control form-control-sm" placeholder="Nama rba" name="nama_rba" id="nama_rba"> -->
+
+            <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="nama_rba" id="nama_rba">
+              <option value=""></option>
+              <option value="( 02.01.02.03.11 ) Pengelola data dan informasi kesehatan">( 02.01.02.03.11 ) Pengelola data dan informasi kesehatan</option>
+              <!-- <option value="Perbekalan">Perbekalan</option> -->
+
+            </select>
           </div>
 
           <div class="form-group">
