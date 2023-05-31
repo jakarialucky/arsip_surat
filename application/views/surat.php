@@ -55,7 +55,7 @@
                 <div class="logo">
                   <img src="<?= base_url() ?>_temp/frontend/v_surat/img/logoterbaru.png" alt="" />
                 </div>
-                <h3 class="bnr-sub-title">SISTEM INFORMASI PENGARSIPAN SURAT</h3>
+                <h3 class="bnr-sub-title">SISTEM INFORMASI PENGARSIPAN Dokumen</h3>
                 <h3 class="bnr-sub-title"><span class="logo-dec">Bidang Pelayanan Non Medik</span></h3>
               </div>
             </div>
@@ -71,29 +71,14 @@
           <div class="col-md-12 text-center">
             <h2 class="service-title pad-bt15">Tentang</h2>
             <p class="sub-title pad-bt15">Website ini berguna untuk pengarsipan Bidang Pelayanan Non Medik RSUD Hadji Boejasin</p>
-            <p>Surat diarsipkan dalam format PDF lalu disesuaikan nomor urutnya.</p>
+            <p>Dokumen diarsipkan dalam format PDF lalu disesuaikan nomor urutnya.</p>
             <hr class="bottom-line">
-            <p class="sub-title pad-bt15">Pengarsipan Surat itu<strong> PENTING</strong></p>
-            <hr class="bottom-line">
+            <!-- <p class="sub-title pad-bt15">Pengarsipan Surat itu<strong> PENTING</strong></p>
+            <hr class="bottom-line"> -->
           </div>
           <div class="col-md-4">
           </div>
-          <div class="col-md-2 col-sm-6 col-xs-12">
-            <div class="wrap-item text-center">
-              <div class="item-img">
-                <img src="<?= base_url() ?>_temp/frontend/v_surat/img/inbox.png">
-              </div>
-              <h3 class="pad-bt15">Surat Masuk</h3>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6 col-xs-12">
-            <div class="wrap-item text-center">
-              <div class="item-img">
-                <img src="<?= base_url() ?>_temp/frontend/v_surat/img/outbox.png">
-              </div>
-              <h3 class="pad-bt15">Surat Keluar</h3>
-            </div>
-          </div>
+
           <div class="col-md-4">
           </div>
         </div>

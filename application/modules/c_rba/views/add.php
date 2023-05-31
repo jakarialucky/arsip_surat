@@ -23,7 +23,7 @@
 
             <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="nama_rba" id="nama_rba">
               <option value=""></option>
-              <option value="( 02.01.02.03.11 ) Pengelola data dan informasi kesehatan">( 02.01.02.03.11 ) Pengelola data dan informasi kesehatan</option>
+              <option value="Pengelola data dan informasi kesehatan">Pengelola data dan informasi kesehatan</option>
               <!-- <option value="Perbekalan">Perbekalan</option> -->
 
             </select>
@@ -31,7 +31,13 @@
 
           <div class="form-group">
             <label>No rekening kegiatan rba</label>
-            <input type="text" class="form-control form-control-sm" placeholder="No rekening kegiatan rba" name="no_rekening_kegiatan_rba" id="no_rekening_kegiatan_rba">
+            <!-- <input type="text" class="form-control form-control-sm" placeholder="No rekening kegiatan rba" name="no_rekening_kegiatan_rba" id="no_rekening_kegiatan_rba"> -->
+            <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="no_rekening_kegiatan_rba" id="no_rekening_kegiatan_rba">
+              <option value=""></option>
+              <option value="02.01.02.03.11">02.01.02.03.11</option>
+              <!-- <option value="Perbekalan">Perbekalan</option> -->
+
+            </select>
           </div>
 
           <div class="form-group">

@@ -41,8 +41,8 @@
             <!-- <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan"> -->
             <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="ditujukan" id="ditujukan">
               <option value=""></option>
-              <option value="Mutu">Mutu</option>
-              <option value="Perbekalan">Perbekalan</option>
+              <option value="seksi mutu dan sumberdaya pelayanan non medik">seksi mutu dan sumberdaya pelayanan non medik</option>
+              <option value="seksi perbekalahn dan pemeliharaan non medik">seksi perbekalahn dan pemeliharaan non medik</option>
 
             </select>
           </div>
