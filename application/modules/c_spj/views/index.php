@@ -13,7 +13,7 @@
         <form autocomplete="off" class="content-filter" style="display: none;">
           <div class="row">
             <div class="form-group col-md-6">
-              <input type="text" id="nomor_spj" class="form-control form-control-sm" placeholder="Nomor spj" />
+              <input type="text" id="nomor_spj" class="form-control form-control-sm" placeholder="Kode Rekening SPJ" />
             </div>
 
             <div class="form-group col-md-6">
@@ -51,7 +51,7 @@
         <table class="table table-bordered table-striped dt-responsive nowrap" id="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
           <thead>
             <tr>
-              <th><?= strtoupper("Nomor spj") ?>
+              <th><?= strtoupper("Kode Rekening SPJ") ?>
               <th><?= strtoupper("Tanggal surat spj") ?>
               <th><?= strtoupper("No invoice") ?>
               <th><?= strtoupper("Uraian") ?>

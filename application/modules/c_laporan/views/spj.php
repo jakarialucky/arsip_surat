@@ -111,7 +111,7 @@
             <thead>
               <tr>
                 <th><?= strtoupper("ID SPJ") ?>
-                <th><?= strtoupper("Nomor SPJ") ?>
+                <th><?= strtoupper("Kode Rekening SPJ") ?>
                 <th><?= strtoupper("Tanggal Surat SPJ") ?>
                 <th><?= strtoupper("No Invoice") ?>
                 <th><?= strtoupper("uraian") ?>

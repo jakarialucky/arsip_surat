@@ -7,7 +7,7 @@
       <div class="card-body">
         <table class="table table-bordered table-striped">
         <tr>
-          <td>Nomor spj</td>
+          <td>Kode Rekening SPJ</td>
           <td><?=$nomor_spj?></td>
         </tr>
       <tr>

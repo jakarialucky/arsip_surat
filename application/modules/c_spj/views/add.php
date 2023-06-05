@@ -8,8 +8,8 @@
         <form action="<?= $action ?>" id="form" autocomplete="off">
 
           <div class="form-group">
-            <label>Nomor SPJ</label>
-            <input type="text" class="form-control form-control-sm" placeholder="Nomor spj" name="nomor_spj" id="nomor_spj">
+            <label>Kode Rekening SPJ</label>
+            <input type="text" class="form-control form-control-sm" placeholder="Kode Rekening SPJ" name="nomor_spj" id="nomor_spj">
           </div>
 
           <div class="form-group">

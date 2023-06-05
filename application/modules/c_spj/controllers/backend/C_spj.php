@@ -133,12 +133,12 @@ class C_spj extends Backend
       }
 
       $json = array('success' => false);
-      // $this->form_validation->set_rules("nomor_spj", "* Nomor spj", "trim|xss_clean|required");
+      // $this->form_validation->set_rules("nomor_spj", "* Kode Rekening SPJ", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_surat_spj", "* Tanggal surat spj", "trim|xss_clean");
       // $this->form_validation->set_rules("no_invoice", "* No invoice", "trim|xss_clean");
       if (empty($_POST['nomor_spj']) && empty($_POST['no_invoice'])) {
-        $this->form_validation->set_rules('nomor_spj', '* Nomor SPJ atau No Invoice', 'required');
-        $this->form_validation->set_rules('no_invoice', '* Nomor SPJ atau No Invoice', 'required');
+        $this->form_validation->set_rules('nomor_spj', '* Kode Rekening SPJ atau No Invoice', 'required');
+        $this->form_validation->set_rules('no_invoice', '* Kode Rekening SPJ atau No Invoice', 'required');
       }
       $this->form_validation->set_rules("uraian", "* uraian", "trim|xss_clean");
       $this->form_validation->set_rules("jumlah_uang", "* Jumlah uang", "trim|xss_clean");
@@ -198,12 +198,12 @@ class C_spj extends Backend
       }
 
       $json = array('success' => false);
-      // $this->form_validation->set_rules("nomor_spj", "* Nomor spj", "trim|xss_clean|required");
+      // $this->form_validation->set_rules("nomor_spj", "* Kode Rekening SPJ", "trim|xss_clean|required");
       $this->form_validation->set_rules("tanggal_surat_spj", "* Tanggal surat spj", "trim|xss_clean");
       // $this->form_validation->set_rules("no_invoice", "* No invoice", "trim|xss_clean");
       if (empty($_POST['nomor_spj']) && empty($_POST['no_invoice'])) {
-        $this->form_validation->set_rules('nomor_spj', '* Nomor SPJ atau No Invoice', 'required');
-        $this->form_validation->set_rules('no_invoice', '* Nomor SPJ atau No Invoice', 'required');
+        $this->form_validation->set_rules('nomor_spj', '* Kode Rekening SPJ atau No Invoice', 'required');
+        $this->form_validation->set_rules('no_invoice', '* Kode Rekening SPJ atau No Invoice', 'required');
       }
       $this->form_validation->set_rules("uraian", "* uraian", "trim|xss_clean");
       $this->form_validation->set_rules("jumlah_uang", "* Jumlah uang", "trim|xss_clean");

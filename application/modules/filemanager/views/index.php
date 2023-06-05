@@ -9,7 +9,7 @@
           <!-- <a href="<?= url("filemanager/add") ?>" id="add" class="btn btn-sm btn-success btn-icon-text"><i class="fa fa-file btn-icon-prepend"></i> <?= cclang("add_new") ?></a>
           <button type="button" id="reload" class="btn btn-sm btn-info-2 btn-icon-text"><i class="mdi mdi-backup-restore btn-icon-prepend"></i> <?= cclang("reload") ?></button> -->
           <a href="<?= url("filemanager/filter/") ?>" id="filter-show" class="btn btn-sm btn-primary btn-icon-text"><i class="mdi mdi-magnify btn-icon-prepend"></i> Filter</a>
-          <!-- <a href="<?= url("filemanager/delete") ?>" id="delete_select" class="btn btn-sm btn-danger btn-icon-text"><i class="ti-trash btn-icon-prepend"></i> <?= cclang("delete_selected") ?></a> -->
+          <a href="<?= url("filemanager/delete") ?>" id="delete_select" class="btn btn-sm btn-danger btn-icon-text"><i class="ti-trash btn-icon-prepend"></i> <?= cclang("delete_selected") ?></a>
         </div>
 
         <div class="table-responsive">
