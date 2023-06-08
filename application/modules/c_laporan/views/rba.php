@@ -304,20 +304,20 @@
         var worksheet = workbook.addWorksheet('Sheet1');
 
         // Mengatur lebar kolom
-        worksheet.columns = [{
-            width: 20
-          },
-          {
-            width: 20
-          },
-          {
-            width: 20
-          },
-          {
-            width: 20
-          },
-          // Tambahkan kolom sesuai dengan jumlah kolom data Anda
-        ];
+        // worksheet.columns = [{
+        //     width: 20
+        //   },
+        //   {
+        //     width: 20
+        //   },
+        //   {
+        //     width: 20
+        //   },
+        //   {
+        //     width: 20
+        //   },
+        //   // Tambahkan kolom sesuai dengan jumlah kolom data Anda
+        // ];
 
         // Mengatur header
         // worksheet.getCell('A1').value = 'Kop Surat Instansi';
@@ -329,54 +329,53 @@
         //   }
         // };
         // worksheet.mergeCells('A1:H1');
-
+        // worksheet.mergeCells('C1:D4');
         // Mengatur logo
+        // worksheet.mergeCells('A1:H1');
         var logo = workbook.addImage({
           base64: base64Image,
           extension: 'png',
         });
-        worksheet.footer = 'Nama Pengguna: John Doe';
-        worksheet.addImage(logo, 'A1:A3');
+        // logo.nativePixels = {
+        //   x: 20,
+        //   y: 30
+        // };
 
-        worksheet.getCell('B1').value = 'RSUD Hadji Beojasin';
-        worksheet.getCell('B1').font = {
+        // worksheet.addImage(logo, 'C1:D3');
+        // logo.editAs = 'oneCell';
+        worksheet.getCell('A5').value = 'RSUD Hadji Beojasin';
+        worksheet.getCell('A5').font = {
           size: 18,
           bold: true,
           alignment: {
             horizontal: 'center'
           }
         };
-        worksheet.getCell('B1').alignment = {
-          horizontal: 'left',
-          vertical: 'middle'
-        };
-        worksheet.mergeCells('B1:E1');
 
-        worksheet.getCell('B2').value = 'Sarang Halang, Pelaihari, Tanah Laut, 70815';
-        worksheet.getCell('B2').font = {
+
+
+        worksheet.getCell('A7').value = 'Sarang Halang, Pelaihari, Tanah Laut, 70815';
+        worksheet.getCell('A7').font = {
           size: 12,
           alignment: {
             horizontal: 'center'
           }
         };
-        worksheet.getCell('B2').alignment = {
-          horizontal: 'left',
-          vertical: 'middle'
-        };
-        worksheet.mergeCells('B2:E2');
 
-        worksheet.getCell('B5').value = '<?= ucwords($title_module) ?>';
-        worksheet.getCell('B5').font = {
-          size: 12,
-          alignment: {
-            horizontal: 'center'
-          }
-        };
-        worksheet.getCell('B5').alignment = {
-          horizontal: 'left',
-          vertical: 'middle'
-        };
-        worksheet.mergeCells('B5:E5');
+
+
+        // worksheet.getCell('B5').value = '<?= ucwords($title_module) ?>';
+        // worksheet.getCell('B5').font = {
+        //   size: 12,
+        //   alignment: {
+        //     horizontal: 'center'
+        //   }
+        // };
+        // worksheet.getCell('B5').alignment = {
+        //   horizontal: 'left',
+        //   vertical: 'middle'
+        // };
+        // worksheet.mergeCells('B5:E5');
 
         // Mengatur data tabel
         var table = $('#table').DataTable();
@@ -385,16 +384,25 @@
 
         // Mengatur header tabel
         tableHeader.forEach((header, index) => {
-          worksheet.getCell(7, index + 1).value = header;
-          worksheet.getCell(7, index + 1).font = {
+          worksheet.getCell(9, index + 1).value = header;
+          worksheet.getCell(9, index + 1).font = {
             bold: true
           };
         });
-
+        worksheet.mergeCells(5, 1, 5, tableHeader.length);
+        worksheet.getCell('A5').alignment = {
+          horizontal: 'center',
+          vertical: 'middle'
+        };
+        worksheet.mergeCells(7, 1, 7, tableHeader.length);
+        worksheet.getCell('A7').alignment = {
+          horizontal: 'center',
+          vertical: 'middle'
+        };
         // Mengatur data tabel
         tableData.forEach((rowData, rowIndex) => {
           rowData.forEach((cellData, cellIndex) => {
-            worksheet.getCell(rowIndex + 8, cellIndex + 1).value = cellData;
+            worksheet.getCell(rowIndex + 10, cellIndex + 1).value = cellData;
           });
         });
 
@@ -411,17 +419,46 @@
           });
           column.width = maxLength < 10 ? 10 : maxLength;
         });
+        worksheet.addImage(logo, {
+          tl: {
+            col: 3.9,
+            row: 0
+          },
+          br: {
+            col: 4.9,
+            row: 4
+          }
+          // editAs: 'oneCell',
+          // ext: {
+          //   width: 120,
+          //   height: 80
+          // }
+        });
         // Menambahkan footer di baris terakhir
-        var lastRowNum = tableData.length + 8;
-        worksheet.getCell(lastRowNum + 1, 1).value = 'Nama Pengguna: <?= profile('name') ?>';
-        worksheet.getCell(lastRowNum + 1, 1).font = {
+        var lastRowNum = tableData.length + 9;
+        worksheet.getCell(lastRowNum + 2, 1).value = 'Tanah Laut , <?= indodate(date('Y-m-d')) ?>';
+        worksheet.getCell(lastRowNum + 2, 1).font = {
           bold: true,
           alignment: {
             horizontal: 'center',
             vertical: 'middle'
           }
         };
-        worksheet.mergeCells(lastRowNum + 1, 1, lastRowNum + 1, tableHeader.length);
+        worksheet.mergeCells(lastRowNum + 2, 1, lastRowNum + 2, tableHeader.length);
+        // Menambahkan footer di baris terakhir
+
+        worksheet.getCell(lastRowNum + 5, 1).value = '<?= profile('name') ?>';
+        worksheet.getCell(lastRowNum + 5, 1).font = {
+          bold: true,
+          alignment: {
+            horizontal: 'center',
+            vertical: 'middle'
+          }
+        };
+        worksheet.mergeCells(lastRowNum + 5, 1, lastRowNum + 5, tableHeader.length);
+
+
+
 
         var buffer = workbook.xlsx.writeBuffer().then(function(buffer) {
           var blob = new Blob([buffer], {
