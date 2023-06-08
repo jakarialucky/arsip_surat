@@ -246,13 +246,13 @@
               text: 'RSUD Hadji Beojasin',
               fontSize: 20,
               alignment: 'center',
-              margin: [0, 0, 0, 10]
+              margin: [0, 0, 0, 25]
             },
             {
               text: 'Sarang Halang, Pelaihari, Tanah Laut , 70815',
               fontSize: 12,
               alignment: 'center',
-              margin: [0, 0, 0, 5]
+              margin: [0, 0, 0, 25]
             },
             // {
             //   text: 'No. Telpon: 12121@',
@@ -273,10 +273,16 @@
               alignment: 'center'
             },
             {
+              text: 'Tanah laut, <?= indodate(date('Y-m-d')) ?>',
+              fontSize: 12,
+              alignment: 'right',
+              margin: [0, 150, 0, 20]
+            },
+            {
               text: '<?= profile('name') ?>',
               fontSize: 12,
-              alignment: 'center',
-              margin: [0, 250, 0, 20]
+              alignment: 'right',
+              margin: [0, 50, 0, 20]
             },
           ],
           styles: {

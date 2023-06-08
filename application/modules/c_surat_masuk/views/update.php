@@ -41,9 +41,8 @@
             <!-- <input type="text" class="form-control form-control-sm" placeholder="Ditujukan" name="ditujukan" id="ditujukan" value="<?= $ditujukan ?>"> -->
             <select class="form-control form-control-sm select2" data-placeholder=" -- Select -- " name="ditujukan" id="ditujukan">
               <option value=""></option>
-              <option <?= ($ditujukan == "Mutu" ? "selected" : "") ?> value="Mutu">Mutu</option>
-              <option <?= ($ditujukan == "Perbekalan" ? "selected" : "") ?> value="Perbekalan">Perbekalan</option>
-
+              <option <?= ($ditujukan == "seksi mutu dan sumberdaya pelayanan non medik" ? "selected" : "") ?>value="seksi mutu dan sumberdaya pelayanan non medik">seksi mutu dan sumberdaya pelayanan non medik</option>
+              <option <?= ($ditujukan == "seksi perbekalan dan pemeliharaan non medik" ? "selected" : "") ?> value="seksi perbekalan dan pemeliharaan non medik">seksi perbekalan dan pemeliharaan non medik</option>
             </select>
           </div>
 
@@ -75,7 +74,7 @@
                 <button class="file-upload-browse btn btn-primary btn-sm" data-id="berkas_surat_masuk" type="button">Select File</button>
               </span>
             </div>
-            <span class="form-text text-muted">Hasil pdf max 10 mb</span>
+            <span class="form-text text-muted">Hasil pdf max 5 Mb</span>
             <div id="berkas_surat_masuk"></div>
           </div>
 
