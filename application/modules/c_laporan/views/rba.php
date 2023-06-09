@@ -90,6 +90,7 @@
               background-color: #ffffff;
               /* Warna latar belakang footer */
               padding: 10px;
+              padding-top: 50px;
               color: #000;
               /* Warna teks footer */
               font-size: 14px;
