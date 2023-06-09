@@ -120,7 +120,7 @@
                 <th><?= strtoupper("Petugas") ?>
                 <th><?= strtoupper("Deskripsi") ?>
                   <!-- <th><?= strtoupper("Berkas Surat Keluar") ?> -->
-                <th><?= strtoupper("Dibuat Pada") ?>
+                  <!-- <th><?= strtoupper("Dibuat Pada") ?> -->
               </tr>
             </thead>
             <tbody>
@@ -136,7 +136,7 @@
                   <td><?php echo $surat->id_petugas; ?></td>
                   <td><?php echo $surat->deskripsi; ?></td>
                   <!-- <td><?php echo $surat->berkas_surat_keluar; ?></td> -->
-                  <td><?php echo $surat->dibuat_pada; ?></td>
+                  <!-- <td><?php echo $surat->dibuat_pada; ?></td> -->
                 </tr>
               <?php } ?>
             </tbody>
@@ -168,50 +168,64 @@
   $(document).ready(function() {
     // Mengambil gambar logo dan mengonversi menjadi base64
     // Fungsi untuk membuat PDF
+
+    initializeDataTable();
     var table;
-    table = $('#table').DataTable({
-      responsive: true,
-      // Pagination settings
-      dom: `<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>
+
+    function initializeDataTable() {
+
+      table = $('#table').DataTable({
+        responsive: true,
+        // Pagination settings
+        dom: `<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>
 			<'row'<'col-sm-12'tr>>
 			<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-
-      buttons: [{
-          extend: 'print',
-          text: 'Print',
-          className: 'btn btn-primary',
-          exportOptions: {
-            columns: ':visible'
-          },
-          orientation: 'landscape',
-          customize: function(win) {
-
-            // atur kustomisasi dokumen PDF di sini
-            $(win.document.body).prepend('<div class="kop_surat">' + $('.kop_surat').html() + '</div>');
-            $(win.document.body).append('<div class="footer_surat">' + $('.footer_surat').html() + '</div>');
-          },
-        },
-        {
-          extend: 'excel',
-          text: 'Excel',
-          className: 'btn btn-success',
-          exportOptions: {
-            columns: ':visible'
-          },
-          action: function(e, dt, button, config) {
-            generateXLX();
+        columnDefs: [{
+          targets: '_all',
+          cellParser: function(data) {
+            if (typeof data === 'string' && data.startsWith('{') && data.endsWith('}')) {
+              return JSON.parse(data);
+            }
+            return data;
           }
-        },
-        {
-          extend: 'pdf',
-          text: 'PDF',
-          className: 'btn btn-danger',
-          action: function(e, dt, button, config) {
-            generatePDF();
+        }],
+        buttons: [{
+            extend: 'print',
+            text: 'Print',
+            className: 'btn btn-primary',
+            exportOptions: {
+              columns: ':visible'
+            },
+            orientation: 'landscape',
+            customize: function(win) {
+
+              // atur kustomisasi dokumen PDF di sini
+              $(win.document.body).prepend('<div class="kop_surat">' + $('.kop_surat').html() + '</div>');
+              $(win.document.body).append('<div class="footer_surat">' + $('.footer_surat').html() + '</div>');
+            },
+          },
+          {
+            extend: 'excel',
+            text: 'Excel',
+            className: 'btn btn-success',
+            exportOptions: {
+              columns: ':visible'
+            },
+            action: function(e, dt, button, config) {
+              generateXLX();
+            }
+          },
+          {
+            extend: 'pdf',
+            text: 'PDF',
+            className: 'btn btn-danger',
+            action: function(e, dt, button, config) {
+              generatePDF();
+            }
           }
-        }
-      ],
-    });
+        ],
+      });
+    }
 
     function escapeXml(unsafe) {
       return unsafe.replace(/[<>&'"]/g, function(c) {
@@ -239,6 +253,7 @@
         const tableHeader = table.columns().header().toArray().map(column => column.innerText);
 
         var docDefinition = {
+          pageSize: 'LEGAL',
           pageOrientation: 'landscape',
           content: [{
               image: base64Image,
@@ -300,7 +315,9 @@
         };
 
         // Membuat PDF menggunakan pdfmake
+        table.destroy();
         pdfMake.createPdf(docDefinition).open();
+        initializeDataTable();
       });
     }
 
