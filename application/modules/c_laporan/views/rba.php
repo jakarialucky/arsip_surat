@@ -93,7 +93,7 @@
               color: #000;
               /* Warna teks footer */
               font-size: 14px;
-              text-align: center;
+              text-align: right;
             }
           </style>
           <div class="kop_surat d-none">
@@ -105,7 +105,9 @@
           <!-- Konten surat -->
 
           <div class="footer_surat d-none">
-            <p>Pencetak Surat: <?= profile('name') ?></p>
+            <p>Tanah Laut , <?= indodate(date('Y-m-d')) ?></p>
+            </br>
+            <p><?= profile('name') ?></p>
           </div>
           <table style="width:100%" id="table" class="table table-bordered table-striped dt-responsive nowrap">
             <thead>
