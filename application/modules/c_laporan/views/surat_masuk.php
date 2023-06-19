@@ -109,6 +109,7 @@
             <p>Tanah Laut , <?= indodate(date('Y-m-d')) ?></p>
             </br>
             <p><?= profile('name') ?></p>
+            <p><?= profile('definition_group') ?></p>
           </div>
 
 
@@ -302,6 +303,12 @@
               alignment: 'right',
               margin: [0, 50, 0, 20]
             },
+            {
+              text: '<?= profile('definition_group') ?>',
+              fontSize: 12,
+              alignment: 'right',
+              margin: [0, 50, 0, 20]
+            },
           ],
           styles: {
             header: {
@@ -481,7 +488,15 @@
         };
         worksheet.mergeCells(lastRowNum + 5, 1, lastRowNum + 5, tableHeader.length);
 
-
+        worksheet.getCell(lastRowNum + 6, 1).value = '<?= profile('definition_group') ?>';
+        worksheet.getCell(lastRowNum + 6, 1).font = {
+          bold: true,
+          alignment: {
+            horizontal: 'center',
+            vertical: 'middle'
+          }
+        };
+        worksheet.mergeCells(lastRowNum + 6, 1, lastRowNum + 6, tableHeader.length);
 
 
         var buffer = workbook.xlsx.writeBuffer().then(function(buffer) {
