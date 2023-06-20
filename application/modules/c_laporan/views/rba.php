@@ -98,7 +98,7 @@
             }
           </style>
           <div class="kop_surat d-none">
-            <img src="https://sippn.menpan.go.id/images/article/large/logo-rs11.png" alt="Logo Instansi">
+            <img src="<?= base_url() ?>/logo_rs.png" alt="Logo Instansi">
             <h1>RSUD Hadji Beojasin</h1>
             <p>Sarang Halang, Pelaihari, Tanah Laut , 70815</p>
           </div>
@@ -244,7 +244,7 @@
 
     function generatePDF() {
       // Mengambil gambar logo dan mengonversi menjadi base64
-      toBase64Image('https://sippn.menpan.go.id/images/article/large/logo-rs11.png', function(base64Image) {
+      toBase64Image('<?= base_url() ?>/logo_rs.png', function(base64Image) {
         // Mendefinisikan layout dan konten PDF
         const tableData = table.rows().data().toArray();
         const tableHeader = table.columns().header().toArray().map(column => column.innerText);
@@ -326,7 +326,7 @@
 
     function generateXLX() {
       // Mengambil gambar logo dan mengonversi menjadi base64
-      toBase64Image('https://sippn.menpan.go.id/images/article/large/logo-rs11.png', function(base64Image) {
+      toBase64Image('<?= base_url() ?>/logo_rs.png', function(base64Image) {
         // Mendefinisikan layout dan konten Excel
         var workbook = new ExcelJS.Workbook();
         var worksheet = workbook.addWorksheet('Sheet1');
