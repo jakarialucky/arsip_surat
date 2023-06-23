@@ -307,7 +307,7 @@
               text: '<?= profile('definition_group') ?>',
               fontSize: 12,
               alignment: 'right',
-              margin: [0, 50, 0, 20]
+              margin: [0, 0, 0, 20]
             },
           ],
           styles: {
